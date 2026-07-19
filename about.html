@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Information — JIMMY LIU</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="page-about">
+
+<header class="site-header scrolled">
+  <div class="header-inner">
+    <a href="index.html" class="logo">JIMMY LIU</a>
+    <nav class="nav">
+      <a href="index.html">作品</a>
+      <a href="about.html" class="active">Information</a>
+    </nav>
+    <button class="nav-toggle" aria-label="打开菜单">☰</button>
+  </div>
+</header>
+
+<section class="about-section">
+  <div class="about-avatar" data-about-avatar></div>
+  <p class="about-bio" data-about-bio></p>
+  <ul class="about-contact">
+    <li><a data-about-email href="#"></a></li>
+    <li><a data-about-instagram href="#" target="_blank" rel="noopener">Instagram</a></li>
+  </ul>
+</section>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> JIMMY LIU. All rights reserved.</p>
+</footer>
+
+<script src="data.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector("[data-about-bio]").textContent = ABOUT.bio;
+    const emailLink = document.querySelector("[data-about-email]");
+    emailLink.textContent = SITE.email;
+    emailLink.href = `mailto:${SITE.email}`;
+
+    const igLink = document.querySelector("[data-about-instagram]");
+    if (SITE.instagram) {
+      igLink.href = SITE.instagram;
+    } else {
+      igLink.style.display = "none";
+    }
+
+    const avatarEl = document.querySelector("[data-about-avatar]");
+    if (ABOUT.avatar) {
+      avatarEl.style.backgroundImage = `url(${ABOUT.avatar})`;
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.querySelector(".nav-toggle").addEventListener("click", () => {
+      document.querySelector(".nav").classList.toggle("nav-open");
+    });
+  });
+</script>
+</body>
+</html>
