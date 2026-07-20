@@ -1,10 +1,10 @@
 :root {
-  --bg: #0b0b0d;
-  --bg-elevated: #151519;
-  --text: #f4f4f2;
-  --text-muted: #9a9aa2;
-  --accent: #d9b26b;
-  --border: rgba(255, 255, 255, 0.1);
+  --bg: #ffffff;
+  --bg-elevated: #f0f0f0;
+  --text: #141414;
+  --text-muted: #6b6b6b;
+  --accent: #b8783a;
+  --border: rgba(0, 0, 0, 0.1);
   --font-display: "Roboto Mono", "PingFang SC", "Microsoft YaHei", sans-serif;
   --font-body: "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
@@ -37,12 +37,16 @@ button { font: inherit; cursor: pointer; }
   z-index: 200;
   transition: background 0.3s ease, border-color 0.3s ease;
   border-bottom: 1px solid transparent;
+  --header-text: #fff;
+  --header-muted: rgba(255, 255, 255, 0.7);
 }
 
 .site-header.scrolled {
-  background: rgba(11, 11, 13, 0.85);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
   border-bottom-color: var(--border);
+  --header-text: var(--text);
+  --header-muted: var(--text-muted);
 }
 
 .header-inner {
@@ -57,6 +61,7 @@ button { font: inherit; cursor: pointer; }
   font-weight: 400;
   font-size: clamp(0.95rem, 1.5vw, 1.15rem);
   letter-spacing: 1px;
+  color: var(--header-text);
 }
 
 .nav {
@@ -66,17 +71,17 @@ button { font: inherit; cursor: pointer; }
 
 .nav a {
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: var(--header-muted);
   transition: color 0.2s ease;
 }
 
-.nav a:hover, .nav a.active { color: var(--text); }
+.nav a:hover, .nav a.active { color: var(--header-text); }
 
 .nav-toggle {
   display: none;
   background: none;
   border: none;
-  color: var(--text);
+  color: var(--header-text);
   font-size: 1.3rem;
 }
 
@@ -89,7 +94,7 @@ button { font: inherit; cursor: pointer; }
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: var(--bg);
+  background: #0b0b0d;
 }
 
 .hero-video,
@@ -129,6 +134,7 @@ button { font: inherit; cursor: pointer; }
   letter-spacing: 2px;
   position: relative;
   top: 14px;
+  color: #fff;
 }
 
 .hero-content p {
@@ -193,7 +199,7 @@ button { font: inherit; cursor: pointer; }
 .work-thumb {
   position: relative;
   aspect-ratio: 4 / 5;
-  border-radius: 6px;
+  border-radius: 0;
   overflow: hidden;
   background: var(--bg-elevated);
   cursor: pointer;
@@ -326,6 +332,7 @@ button { font: inherit; cursor: pointer; }
   justify-content: center;
   background: rgba(6, 6, 7, 0.96);
   backdrop-filter: blur(6px);
+  color: #f4f4f2;
 }
 
 .lightbox.open { display: flex; }
@@ -342,13 +349,13 @@ button { font: inherit; cursor: pointer; }
 .lightbox-stage video {
   max-width: min(90vw, 1100px);
   max-height: 78vh;
-  border-radius: 4px;
+  border-radius: 0;
 }
 
 .stage-placeholder {
   width: min(90vw, 700px);
   aspect-ratio: 4 / 3;
-  border-radius: 4px;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -371,7 +378,7 @@ button { font: inherit; cursor: pointer; }
 
 .lightbox-info p {
   margin-top: 4px;
-  color: var(--text-muted);
+  color: rgba(244, 244, 242, 0.7);
   font-size: 0.85rem;
 }
 
@@ -381,7 +388,7 @@ button { font: inherit; cursor: pointer; }
   right: clamp(20px, 4vw, 48px);
   background: none;
   border: none;
-  color: var(--text);
+  color: #fff;
   font-size: 1.4rem;
 }
 
@@ -391,7 +398,7 @@ button { font: inherit; cursor: pointer; }
   transform: translateY(-50%);
   background: none;
   border: none;
-  color: var(--text);
+  color: #fff;
   font-size: 2.5rem;
   line-height: 1;
   padding: 12px;
@@ -413,7 +420,7 @@ button { font: inherit; cursor: pointer; }
     left: 0;
     flex-direction: column;
     gap: 0;
-    background: rgba(11, 11, 13, 0.96);
+    background: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
     max-height: 0;
@@ -421,7 +428,7 @@ button { font: inherit; cursor: pointer; }
     transition: max-height 0.25s ease;
   }
   .nav.nav-open { max-height: 200px; }
-  .nav a { padding: 16px clamp(20px, 5vw, 56px); border-top: 1px solid var(--border); }
+  .nav a { padding: 16px clamp(20px, 5vw, 56px); border-top: 1px solid var(--border); color: var(--text); }
 
   .lightbox-nav { font-size: 1.8rem; padding: 8px; }
 }

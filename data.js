@@ -23,13 +23,13 @@ const HERO = {
 // video 类型: video 字段填视频文件路径, poster 填封面图路径
 // photo 类型: images 是这一组照片的路径数组; 如果还没有真实图片,用 count 指定占位图张数
 const WORKS = [
-  { id: 1, type: "video", title: "城市夜行", category: "影像", year: 2026, video: "", poster: "", colorClass: "ph-1" },
+  { id: 1, type: "video", title: "Summer of Soleil", category: "短片", year: 2024, video: "", poster: "", colorClass: "ph-1" },
   { id: 2, type: "photo", title: "山间光影", category: "风光摄影", year: 2025, images: [], count: 4, colorClass: "ph-2" },
-  { id: 3, type: "video", title: "海岸线", category: "影像", year: 2025, video: "", poster: "", colorClass: "ph-3" },
+  { id: 3, type: "video", title: "Something Different Nothing Different", category: "短片", year: 2023, video: "", poster: "", colorClass: "ph-3" },
   { id: 4, type: "photo", title: "人像特写", category: "人像摄影", year: 2025, images: [], count: 1, colorClass: "ph-4" },
-  { id: 5, type: "video", title: "街头速写", category: "影像", year: 2025, video: "", poster: "", colorClass: "ph-5" },
+  { id: 5, type: "video", title: "A Day of Reiko", category: "短片", year: 2024, video: "", poster: "", colorClass: "ph-5" },
   { id: 6, type: "photo", title: "旅行记录", category: "旅拍", year: 2024, images: [], count: 6, colorClass: "ph-6" },
-  { id: 7, type: "video", title: "光影实验", category: "影像", year: 2024, video: "", poster: "", colorClass: "ph-7" },
+  { id: 7, type: "video", title: "Yi Crafts", category: "纪录片", year: 2024, video: "", poster: "", colorClass: "ph-7" },
   { id: 8, type: "photo", title: "黑白影像", category: "静物摄影", year: 2024, images: [], count: 3, colorClass: "ph-8" },
   { id: 9, type: "video", title: "四季", category: "影像", year: 2024, video: "", poster: "", colorClass: "ph-1" }
 ];
