@@ -14,6 +14,7 @@
   --border: rgba(0, 0, 0, 0.1);
   --font-display: "Space Grotesk", "PingFang SC", "Microsoft YaHei", sans-serif;
   --font-body: "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-name: "Coral Pixels", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -142,6 +143,12 @@ button { font: inherit; cursor: pointer; }
   position: relative;
   top: 14px;
   color: #fff;
+}
+
+/* Homepage-only: site name uses a distinct display font from the rest of the UI */
+.page-home .logo,
+.page-home .hero-content h1 {
+  font-family: var(--font-name);
 }
 
 .hero-content p {
