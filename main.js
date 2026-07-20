@@ -71,9 +71,11 @@ function renderWorkGrid() {
 
     return `
       <article class="work-card" data-work-index="${index}" tabindex="0" role="button" aria-label="${work.title}">
-        <div class="work-thumb">
-          ${thumbInner}
-          ${badge}
+        <div class="work-thumb-frame">
+          <div class="work-thumb">
+            ${thumbInner}
+            ${badge}
+          </div>
         </div>
         <div class="work-meta">
           <h3>${work.title}</h3>
