@@ -63,8 +63,9 @@ function renderWorkGrid() {
     const poster = isVideo ? work.poster : (work.images && work.images[0]);
     const count = !isVideo ? ((work.images && work.images.length) || work.count || 1) : 0;
 
+    const thumbStyle = `object-position: ${work.posterPosition || "center"}; transform: scale(${work.posterScale || 1}); transform-origin: center bottom;`;
     const thumbInner = poster
-      ? `<img src="${poster}" alt="${work.title}" loading="lazy" style="object-position: ${work.posterPosition || "center"};">`
+      ? `<img src="${poster}" alt="${work.title}" loading="lazy" style="${thumbStyle}">`
       : `<div class="thumb-placeholder ${work.colorClass}"></div>`;
 
     const badge = isVideo
