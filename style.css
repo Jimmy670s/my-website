@@ -196,26 +196,36 @@ button { font: inherit; cursor: pointer; }
   overflow: hidden;
   background: var(--bg-elevated);
   cursor: pointer;
-  box-shadow: 0 0 0 0 var(--accent);
+  box-shadow: 0 0 0 0 #000;
   transition: box-shadow 0.35s ease;
 }
 
 .work-card:hover .work-thumb {
-  box-shadow: 0 0 0 3px var(--accent);
+  box-shadow: 0 0 0 3px #000;
 }
 
 .work-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  filter: grayscale(1);
+  transition: transform 0.5s ease, filter 0.4s ease;
 }
 
-.work-card:hover .work-thumb img { transform: scale(1.04); }
+.work-card:hover .work-thumb img {
+  transform: scale(1.04);
+  filter: grayscale(0);
+}
 
 .thumb-placeholder {
   width: 100%;
   height: 100%;
+  filter: grayscale(1);
+  transition: filter 0.4s ease;
+}
+
+.work-card:hover .thumb-placeholder {
+  filter: grayscale(0);
 }
 
 .ph-1 { background: linear-gradient(135deg, #d9b26b, #8a5a2e); }
