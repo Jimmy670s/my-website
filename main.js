@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderWorkGrid();
   setupNavScroll();
   setupCardReveal();
-  setupHoverPill();
   setupLightbox();
   setupNavToggle();
   const yearEl = document.getElementById("year");
@@ -77,7 +76,6 @@ function renderWorkGrid() {
         <div class="work-thumb">
           ${thumbInner}
           ${badge}
-          <span class="hover-pill">${isVideo ? "Play" : "View"}</span>
         </div>
         <div class="work-meta">
           <h3>${work.title}</h3>
@@ -136,20 +134,6 @@ function setupCardReveal() {
     });
   }, { threshold: 0.15 });
   cards.forEach((c) => observer.observe(c));
-}
-
-// Cursor-following "View/Play" pill, desktop pointer devices only.
-function setupHoverPill() {
-  if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
-  document.querySelectorAll(".work-thumb").forEach((thumb) => {
-    const pill = thumb.querySelector(".hover-pill");
-    if (!pill) return;
-    thumb.addEventListener("mousemove", (e) => {
-      const rect = thumb.getBoundingClientRect();
-      pill.style.left = `${e.clientX - rect.left}px`;
-      pill.style.top = `${e.clientY - rect.top}px`;
-    });
-  });
 }
 
 let currentSlide = 0;

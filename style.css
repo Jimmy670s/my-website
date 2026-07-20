@@ -196,6 +196,12 @@ button { font: inherit; cursor: pointer; }
   overflow: hidden;
   background: var(--bg-elevated);
   cursor: pointer;
+  box-shadow: 0 0 0 0 var(--accent);
+  transition: box-shadow 0.35s ease;
+}
+
+.work-card:hover .work-thumb {
+  box-shadow: 0 0 0 3px var(--accent);
 }
 
 .work-thumb img {
@@ -230,27 +236,6 @@ button { font: inherit; cursor: pointer; }
   border-radius: 999px;
   font-size: 0.75rem;
   letter-spacing: 0.5px;
-}
-
-.hover-pill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  padding: 10px 18px;
-  border-radius: 999px;
-  background: var(--text);
-  color: var(--bg);
-  font-size: 0.8rem;
-  font-weight: 500;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .work-thumb:hover .hover-pill { opacity: 1; }
 }
 
 .work-meta {
