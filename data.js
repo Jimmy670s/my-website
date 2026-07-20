@@ -23,9 +23,9 @@ const HERO = {
 // video 类型: video 字段填视频文件路径, poster 填封面图路径
 // photo 类型: images 是这一组照片的路径数组; 如果还没有真实图片,用 count 指定占位图张数
 const WORKS = [
-  { id: 1, type: "video", title: "Summer of Soleil", category: "Short Film", year: 2024, video: "", poster: "", colorClass: "ph-1" },
+  { id: 1, type: "video", title: "Soleil's Summer", category: "Short Film", year: 2024, video: "", poster: "assets/poster-soleils-summer.jpg", colorClass: "ph-1" },
   { id: 2, type: "photo", title: "Mountain Light", category: "Landscape", year: 2025, images: [], count: 4, colorClass: "ph-2" },
-  { id: 3, type: "video", title: "Something Different Nothing Different", category: "Short Film", year: 2023, video: "", poster: "", colorClass: "ph-3" },
+  { id: 3, type: "video", title: "Something Different Nothing Different", category: "Short Film", year: 2023, video: "", poster: "assets/poster-something-different.jpg", colorClass: "ph-3" },
   { id: 4, type: "photo", title: "Portrait Study", category: "Portrait", year: 2025, images: [], count: 1, colorClass: "ph-4" },
   { id: 5, type: "video", title: "A Day of Reiko", category: "Short Film", year: 2024, video: "", poster: "", colorClass: "ph-5" },
   { id: 6, type: "photo", title: "Travel Log", category: "Travel", year: 2024, images: [], count: 6, colorClass: "ph-6" },
