@@ -67,6 +67,10 @@ function renderWorkGrid() {
       ? `<img src="${poster}" alt="${work.title}" loading="lazy" style="${thumbStyle}">`
       : `<div class="thumb-placeholder ${work.colorClass}"></div>`;
 
+    const previewVideo = isVideo && work.video
+      ? `<video class="thumb-preview-video" src="${work.video}" muted loop playsinline preload="none"></video>`
+      : "";
+
     const badge = !isVideo && count > 1 ? `<span class="media-badge">1/${count}</span>` : "";
 
     return `
@@ -74,6 +78,7 @@ function renderWorkGrid() {
         <div class="work-thumb-frame">
           <div class="work-thumb">
             ${thumbInner}
+            ${previewVideo}
             ${badge}
           </div>
         </div>
@@ -97,6 +102,17 @@ function renderWorkGrid() {
         card.click();
       }
     });
+
+    const previewVideoEl = card.querySelector(".thumb-preview-video");
+    if (previewVideoEl) {
+      card.addEventListener("mouseenter", () => {
+        previewVideoEl.currentTime = 0;
+        previewVideoEl.play().catch(() => {});
+      });
+      card.addEventListener("mouseleave", () => {
+        previewVideoEl.pause();
+      });
+    }
   });
 }
 
