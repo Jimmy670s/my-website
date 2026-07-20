@@ -64,7 +64,7 @@ function renderWorkGrid() {
     const count = !isVideo ? ((work.images && work.images.length) || work.count || 1) : 0;
 
     const thumbInner = poster
-      ? `<img src="${poster}" alt="${work.title}" loading="lazy">`
+      ? `<img src="${poster}" alt="${work.title}" loading="lazy" style="object-position: ${work.posterPosition || "center"};">`
       : `<div class="thumb-placeholder ${work.colorClass}"></div>`;
 
     const badge = isVideo
