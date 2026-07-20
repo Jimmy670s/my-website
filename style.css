@@ -201,7 +201,7 @@ button { font: inherit; cursor: pointer; }
 }
 
 .work-card:hover .work-thumb {
-  box-shadow: 0 0 0 3px #000;
+  box-shadow: 0 0 0 1.5px #000;
 }
 
 .work-thumb img {

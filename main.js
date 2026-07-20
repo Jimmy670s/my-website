@@ -67,9 +67,7 @@ function renderWorkGrid() {
       ? `<img src="${poster}" alt="${work.title}" loading="lazy" style="${thumbStyle}">`
       : `<div class="thumb-placeholder ${work.colorClass}"></div>`;
 
-    const badge = isVideo
-      ? `<span class="media-badge" aria-hidden="true">▶</span>`
-      : (count > 1 ? `<span class="media-badge">1/${count}</span>` : "");
+    const badge = !isVideo && count > 1 ? `<span class="media-badge">1/${count}</span>` : "";
 
     return `
       <article class="work-card" data-work-index="${index}" tabindex="0" role="button" aria-label="${work.title}">
