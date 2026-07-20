@@ -7,7 +7,7 @@
 
 const SITE = {
   name: "JIMMY LIU",
-  tagline: "Photography / Film Portfolio",
+  tagline: "Portfolio / 作品集",
   email: "streetlights670@gmail.com",
   instagram: "" // 例如 "https://instagram.com/你的用户名"
 };
