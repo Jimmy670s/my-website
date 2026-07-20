@@ -13,8 +13,8 @@ const SITE = {
 };
 
 const HERO = {
-  video: "", // assets/hero.mp4 —— 首页大屏循环播放的混剪视频
-  poster: "", // 视频加载出来之前 / 视频缺失时的背景图,留空则显示渐变占位
+  video: "assets/hero.mp4", // 首页大屏循环播放的混剪视频
+  poster: "assets/hero-poster.jpg", // 视频加载出来之前的背景图
   title: SITE.name,
   subtitle: SITE.tagline
 };
