@@ -5,7 +5,7 @@
   --text-muted: #9a9aa2;
   --accent: #d9b26b;
   --border: rgba(255, 255, 255, 0.1);
-  --font-display: "Space Grotesk", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-display: "Special Elite", "PingFang SC", "Microsoft YaHei", sans-serif;
   --font-body: "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
@@ -54,7 +54,7 @@ button { font: inherit; cursor: pointer; }
 
 .logo {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 400;
   font-size: clamp(0.95rem, 1.5vw, 1.15rem);
   letter-spacing: 1px;
 }
@@ -124,7 +124,7 @@ button { font: inherit; cursor: pointer; }
 
 .hero-content h1 {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 400;
   font-size: clamp(2.4rem, 8vw, 5.5rem);
   letter-spacing: 2px;
 }
@@ -258,7 +258,7 @@ button { font: inherit; cursor: pointer; }
 
 .work-meta h3 {
   font-family: var(--font-display);
-  font-weight: 500;
+  font-weight: 400;
   font-size: 1.05rem;
 }
 
@@ -364,7 +364,7 @@ button { font: inherit; cursor: pointer; }
 
 .lightbox-info h4 {
   font-family: var(--font-display);
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .lightbox-info p {
