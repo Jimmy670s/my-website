@@ -7,7 +7,7 @@
 
 const SITE = {
   name: "JIMMY LIU",
-  tagline: "摄影 / 影像作品集",
+  tagline: "Photography / Film Portfolio",
   email: "streetlights670@gmail.com",
   instagram: "" // 例如 "https://instagram.com/你的用户名"
 };
@@ -23,18 +23,18 @@ const HERO = {
 // video 类型: video 字段填视频文件路径, poster 填封面图路径
 // photo 类型: images 是这一组照片的路径数组; 如果还没有真实图片,用 count 指定占位图张数
 const WORKS = [
-  { id: 1, type: "video", title: "Summer of Soleil", category: "短片", year: 2024, video: "", poster: "", colorClass: "ph-1" },
-  { id: 2, type: "photo", title: "山间光影", category: "风光摄影", year: 2025, images: [], count: 4, colorClass: "ph-2" },
-  { id: 3, type: "video", title: "Something Different Nothing Different", category: "短片", year: 2023, video: "", poster: "", colorClass: "ph-3" },
-  { id: 4, type: "photo", title: "人像特写", category: "人像摄影", year: 2025, images: [], count: 1, colorClass: "ph-4" },
-  { id: 5, type: "video", title: "A Day of Reiko", category: "短片", year: 2024, video: "", poster: "", colorClass: "ph-5" },
-  { id: 6, type: "photo", title: "旅行记录", category: "旅拍", year: 2024, images: [], count: 6, colorClass: "ph-6" },
-  { id: 7, type: "video", title: "Yi Crafts", category: "纪录片", year: 2024, video: "", poster: "", colorClass: "ph-7" },
-  { id: 8, type: "photo", title: "黑白影像", category: "静物摄影", year: 2024, images: [], count: 3, colorClass: "ph-8" },
-  { id: 9, type: "video", title: "四季", category: "影像", year: 2024, video: "", poster: "", colorClass: "ph-1" }
+  { id: 1, type: "video", title: "Summer of Soleil", category: "Short Film", year: 2024, video: "", poster: "", colorClass: "ph-1" },
+  { id: 2, type: "photo", title: "Mountain Light", category: "Landscape", year: 2025, images: [], count: 4, colorClass: "ph-2" },
+  { id: 3, type: "video", title: "Something Different Nothing Different", category: "Short Film", year: 2023, video: "", poster: "", colorClass: "ph-3" },
+  { id: 4, type: "photo", title: "Portrait Study", category: "Portrait", year: 2025, images: [], count: 1, colorClass: "ph-4" },
+  { id: 5, type: "video", title: "A Day of Reiko", category: "Short Film", year: 2024, video: "", poster: "", colorClass: "ph-5" },
+  { id: 6, type: "photo", title: "Travel Log", category: "Travel", year: 2024, images: [], count: 6, colorClass: "ph-6" },
+  { id: 7, type: "video", title: "Yi Crafts", category: "Documentary", year: 2024, video: "", poster: "", colorClass: "ph-7" },
+  { id: 8, type: "photo", title: "Monochrome", category: "Still Life", year: 2024, images: [], count: 3, colorClass: "ph-8" },
+  { id: 9, type: "video", title: "Four Seasons", category: "Film", year: 2024, video: "", poster: "", colorClass: "ph-1" }
 ];
 
 const ABOUT = {
-  bio: "你好,我是 Jimmy,一名专注于影像与摄影的创作者。我的作品游走于静态照片与动态影像之间,喜欢捕捉光影、城市与人之间稍纵即逝的关系。这里收录了我近期的部分创作,欢迎交流与合作。",
+  bio: "Hi, I'm Jimmy — a creator focused on film and photography. My work moves between still images and moving pictures, drawn to the fleeting relationships between light, the city, and people. This is a collection of my recent work — feel free to reach out.",
   avatar: "" // assets/avatar.jpg,留空则显示渐变占位圆形头像
 };

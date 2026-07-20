@@ -76,7 +76,7 @@ function renderWorkGrid() {
         <div class="work-thumb">
           ${thumbInner}
           ${badge}
-          <span class="hover-pill">${isVideo ? "播放" : "查看"}</span>
+          <span class="hover-pill">${isVideo ? "Play" : "View"}</span>
         </div>
         <div class="work-meta">
           <h3>${work.title}</h3>
@@ -137,7 +137,7 @@ function setupCardReveal() {
   cards.forEach((c) => observer.observe(c));
 }
 
-// Cursor-following "查看/播放" pill, desktop pointer devices only.
+// Cursor-following "View/Play" pill, desktop pointer devices only.
 function setupHoverPill() {
   if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
   document.querySelectorAll(".work-thumb").forEach((thumb) => {
@@ -230,14 +230,14 @@ function renderSlide() {
     if (work.video) {
       lightboxEls.stage.innerHTML = `<video src="${work.video}" ${work.poster ? `poster="${work.poster}"` : ""} controls autoplay playsinline></video>`;
     } else {
-      lightboxEls.stage.innerHTML = `<div class="stage-placeholder ${work.colorClass}"><p>视频素材待添加</p></div>`;
+      lightboxEls.stage.innerHTML = `<div class="stage-placeholder ${work.colorClass}"><p>Video coming soon</p></div>`;
     }
   } else {
     const src = work.images && work.images[mediaIndex];
     if (src) {
       lightboxEls.stage.innerHTML = `<img src="${src}" alt="${work.title}">`;
     } else {
-      lightboxEls.stage.innerHTML = `<div class="stage-placeholder ${work.colorClass}"><p>图片素材待添加</p></div>`;
+      lightboxEls.stage.innerHTML = `<div class="stage-placeholder ${work.colorClass}"><p>Photo coming soon</p></div>`;
     }
   }
 }
