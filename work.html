@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JIMMY LIU — Work</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="page-work">
+
+<header class="site-header on-dark">
+  <div class="header-inner">
+    <a href="index.html" class="logo">JIMMY LIU</a>
+    <nav class="nav">
+      <a href="index.html">Work</a>
+      <a href="about.html">Information</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<main class="work-page">
+  <div class="work-viewer">
+    <button class="viewer-nav viewer-prev" data-viewer-prev aria-label="Previous" hidden>‹</button>
+    <div class="viewer-stage" data-viewer-stage></div>
+    <button class="viewer-nav viewer-next" data-viewer-next aria-label="Next" hidden>›</button>
+  </div>
+  <div class="work-page-info">
+    <h1 data-work-title></h1>
+    <p data-work-meta></p>
+  </div>
+
+  <section class="credits" data-credits-section hidden>
+    <h2>Credits</h2>
+    <div class="credits-table" data-credits-table></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> JIMMY LIU. All rights reserved.</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="work.js"></script>
+</body>
+</html>
