@@ -43,10 +43,9 @@ const WORKS = [
     credits: { directedBy: "", writtenBy: "", cinematographyBy: "Jimmy Liu", editedBy: "", colourBy: "", camera: "Sony FX3", aspectRatio: "2.39:1", runtime: "" } },
   { id: 13, type: "video", title: "Live from Saatchi", category: "Exhibition Film", year: 2026, video: "", poster: "assets/poster-live-from-saatchi.jpg", colorClass: "ph-8",
     credits: { directedBy: "", writtenBy: "", cinematographyBy: "Jimmy Liu", editedBy: "", colourBy: "", camera: "Sony FX3", aspectRatio: "2.39:1", runtime: "" } },
-  { id: 2, type: "photo", title: "Mountain Light", category: "Landscape", year: 2025, images: [], count: 4, colorClass: "ph-2" },
-  { id: 4, type: "photo", title: "Portrait Study", category: "Portrait", year: 2025, images: [], count: 1, colorClass: "ph-4" },
-  { id: 6, type: "photo", title: "Travel Log", category: "Travel", year: 2024, images: [], count: 6, colorClass: "ph-6" },
-  { id: 8, type: "photo", title: "Monochrome", category: "Still Life", year: 2024, images: [], count: 3, colorClass: "ph-8" }
+  { id: 2, type: "photo", title: "Film", category: "Film Photography", year: 2026, images: [], count: 1, colorClass: "ph-2" },
+  { id: 4, type: "photo", title: "Digital", category: "Digital Photography", year: 2026, images: [], count: 1, colorClass: "ph-6" },
+  { id: 6, type: "photo", title: "Mobile", category: "Mobile Photography", year: 2026, images: [], count: 1, colorClass: "ph-8" }
 ];
 
 const ABOUT = {
