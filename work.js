@@ -107,4 +107,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Prefer browser back when we arrived from within the site, so the grid's
+  // scroll position is restored; fall back to the plain index.html link otherwise.
+  const backLink = document.querySelector("[data-back-link]");
+  if (backLink && document.referrer && document.referrer.includes(window.location.hostname)) {
+    backLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.history.back();
+    });
+  }
 });

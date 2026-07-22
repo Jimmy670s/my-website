@@ -346,6 +346,31 @@ button { font: inherit; cursor: pointer; }
   padding: clamp(100px, 16vh, 160px) clamp(20px, 5vw, 56px) 0;
 }
 
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(244, 244, 242, 0.55);
+  font-size: 0.9rem;
+  letter-spacing: 0.2px;
+  margin-bottom: clamp(24px, 5vh, 48px);
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.back-link:hover {
+  color: #fff;
+  gap: 12px;
+}
+
+.back-arrow {
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.back-link:hover .back-arrow {
+  transform: translateX(-2px);
+}
+
 .work-viewer {
   position: relative;
   display: flex;
