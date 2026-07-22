@@ -232,7 +232,8 @@ button { font: inherit; cursor: pointer; }
   pointer-events: none;
 }
 
-.work-card:hover .thumb-preview-video {
+.work-card:hover .thumb-preview-video,
+.work-card.video-active .thumb-preview-video {
   opacity: 1;
 }
 

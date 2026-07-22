@@ -49,8 +49,8 @@ function renderWorkGrid() {
       ? `<img src="${poster}" alt="${work.title}" loading="lazy" style="${thumbStyle}">`
       : `<div class="thumb-placeholder ${work.colorClass}"></div>`;
 
-    const previewVideo = isVideo && work.video
-      ? `<video class="thumb-preview-video" src="${work.video}" muted loop playsinline preload="none"></video>`
+    const previewVideo = isVideo && work.coverVideo
+      ? `<video class="thumb-preview-video" src="${work.coverVideo}" muted loop playsinline preload="none"></video>`
       : "";
 
     const badge = !isVideo && count > 1 ? `<span class="media-badge">1/${count}</span>` : "";
@@ -83,17 +83,49 @@ function renderWorkGrid() {
         card.click();
       }
     });
+  });
 
-    const previewVideoEl = card.querySelector(".thumb-preview-video");
-    if (previewVideoEl) {
+  setupCoverVideoPreviews(grid);
+}
+
+// Desktop: play the cover preview clip on hover. Touch devices have no hover,
+// so instead autoplay whichever card's preview is substantially on screen.
+function setupCoverVideoPreviews(grid) {
+  const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const cards = grid.querySelectorAll(".work-card");
+
+  if (canHover) {
+    cards.forEach((card) => {
+      const videoEl = card.querySelector(".thumb-preview-video");
+      if (!videoEl) return;
       card.addEventListener("mouseenter", () => {
-        previewVideoEl.currentTime = 0;
-        previewVideoEl.play().catch(() => {});
+        videoEl.currentTime = 0;
+        videoEl.play().catch(() => {});
       });
       card.addEventListener("mouseleave", () => {
-        previewVideoEl.pause();
+        videoEl.pause();
       });
-    }
+    });
+    return;
+  }
+
+  if (!("IntersectionObserver" in window)) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const videoEl = entry.target.querySelector(".thumb-preview-video");
+      if (!videoEl) return;
+      if (entry.isIntersecting) {
+        entry.target.classList.add("video-active");
+        videoEl.play().catch(() => {});
+      } else {
+        entry.target.classList.remove("video-active");
+        videoEl.pause();
+      }
+    });
+  }, { threshold: 0.6 });
+
+  cards.forEach((card) => {
+    if (card.querySelector(".thumb-preview-video")) observer.observe(card);
   });
 }
 
