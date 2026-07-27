@@ -23,26 +23,26 @@ const HERO = {
 // video 类型: video 字段填视频文件路径, poster 填封面图路径
 // coverVideo: 鼠标悬停(或手机上滑入屏幕)时,在网格缩略图里播放的预览片段;留空则悬停时还是显示 poster 图
 // photo 类型: images 是这一组照片的路径数组; 如果还没有真实图片,用 count 指定占位图张数
-// credits: 视频作品详情页底部的 Credits 表格,留空的字段不会显示那一行
+// credits: 详情页底部 Credits 表格,是 [标签, 内容] 的数组,按填的顺序显示;不需要的行直接不写
 const WORKS = [
   { id: 9, type: "video", title: "Cascade", category: "Visual Poem", year: 2023, video: "", poster: "assets/poster-cascade.jpg", coverVideo: "assets/cover-cascade.mp4", colorClass: "ph-1",
-    credits: { directedBy: "", writtenBy: "", cinematographyBy: "Jimmy Liu", editedBy: "", colourBy: "", camera: "Sony FX3", aspectRatio: "2.39:1", runtime: "" } },
+    credits: [["Directed by", "Jimmy Liu"], ["Cinematography by", "Jimmy Liu"], ["Colour by", "Jimmy Liu"], ["Camera", "Fujifilm XT4"], ["Runtime", "05:11"], ["Location", "London, UK"]] },
   { id: 1, type: "video", title: "Soleil's Summer", category: "Short Film", year: 2024, video: "", poster: "assets/poster-soleils-summer.jpg", coverVideo: "assets/cover-soleils-summer.mp4", colorClass: "ph-1",
-    credits: { directedBy: "", writtenBy: "", cinematographyBy: "Jimmy Liu", editedBy: "", colourBy: "", camera: "Sony FX3", aspectRatio: "2.39:1", runtime: "" } },
+    credits: [["Directed by", "Yuguang Wang"], ["Cinematography by", "Jimmy Liu"], ["Camera", "ARRI Alexa 35"], ["Runtime", "15:03"], ["Location", "London, UK"]] },
   { id: 3, type: "video", title: "Something Different Nothing Different", category: "Short Film", year: 2023, video: "", poster: "assets/poster-something-different.jpg", coverVideo: "assets/cover-something-different.mp4", colorClass: "ph-3",
-    credits: { directedBy: "Jimmy Liu", writtenBy: "Jimmy Liu", cinematographyBy: "UGU", editedBy: "", colourBy: "", camera: "Sony FX3", aspectRatio: "2.39:1", runtime: "" } },
+    credits: [["Written & Directed by", "Jimmy Liu"], ["Cinematography by", "UGU"], ["Colour by", "Jimmy Liu"], ["Camera", "DJI Ronin 4D"], ["Runtime", "08:34"], ["Location", "London, UK"]] },
   { id: 5, type: "video", title: "A Day of Reiko", category: "Mood Film", year: 2024, video: "", poster: "assets/poster-a-day-of-reiko.jpg", coverVideo: "assets/cover-a-day-of-reiko.mp4", colorClass: "ph-5",
-    credits: { directedBy: "Raine", writtenBy: "", cinematographyBy: "Jimmy Liu", editedBy: "", colourBy: "", camera: "Sony FX3", aspectRatio: "2.39:1", runtime: "" } },
+    credits: [["Directed by", "Raine"], ["Cinematography by", "Jimmy Liu"], ["Colour by", "Jimmy Liu"], ["Camera", "Sony FX3"], ["Runtime", "02:18"], ["Location", "London, UK"]] },
   { id: 7, type: "video", title: "Yi Crafts", category: "Brand Film", year: 2024, video: "", poster: "assets/poster-yicrafts.jpg", coverVideo: "assets/cover-yicrafts.mp4", colorClass: "ph-7",
-    credits: { directedBy: "Raine", writtenBy: "", cinematographyBy: "Jimmy Liu", editedBy: "", colourBy: "", camera: "Sony FX3", aspectRatio: "2.39:1", runtime: "" } },
+    credits: [["Directed by", "Raine"], ["Cinematography by", "Jimmy Liu"], ["Colour by", "Jimmy Liu"], ["Camera", "Sony A7M4"], ["Runtime", "02:05"], ["Location", "London, UK"]] },
   { id: 10, type: "video", title: "Encounter", category: "Short Film", year: 2022, video: "", poster: "assets/poster-encounter.jpg", coverVideo: "assets/cover-encounter.mp4", colorClass: "ph-2",
-    credits: { directedBy: "Jimmy Liu", writtenBy: "", cinematographyBy: "", editedBy: "", colourBy: "", camera: "Sony FX3", aspectRatio: "2.39:1", runtime: "" } },
+    credits: [["Directed by", "Jimmy Liu"], ["Story by", "Jimmy Liu"], ["Camera", "Canon 5D2"], ["Runtime", "10:30"], ["Location", "Xinliao, CN"]] },
   { id: 12, type: "video", title: "Turner: The Interview", category: "Portrait Film", year: 2025, video: "", poster: "assets/poster-turner-interview.jpg", colorClass: "ph-6",
-    credits: { directedBy: "", writtenBy: "", cinematographyBy: "Jimmy Liu", editedBy: "", colourBy: "", camera: "Sony FX3", aspectRatio: "2.39:1", runtime: "" } },
+    credits: [["Shot by", "Jimmy Liu"], ["Colour by", "Jimmy Liu"], ["Camera", "Leica SL3, Fujifilm XT4"], ["Runtime", "03:04"]] },
   { id: 11, type: "video", title: "Maxsho: The Interview", category: "Interview", year: 2025, video: "", poster: "assets/poster-maxsho-interview.jpg", colorClass: "ph-4",
-    credits: { directedBy: "", writtenBy: "", cinematographyBy: "Jimmy Liu", editedBy: "", colourBy: "", camera: "Sony FX3", aspectRatio: "2.39:1", runtime: "" } },
+    credits: [["Directed & Shot by", "Jimmy Liu"], ["Camera", "Leica SL3"], ["Runtime", "02:24"]] },
   { id: 13, type: "video", title: "Live from Saatchi", category: "Exhibition Film", year: 2026, video: "", poster: "assets/poster-live-from-saatchi.jpg", colorClass: "ph-8",
-    credits: { directedBy: "", writtenBy: "", cinematographyBy: "Jimmy Liu", editedBy: "", colourBy: "", camera: "Sony FX3", aspectRatio: "2.39:1", runtime: "" } },
+    credits: [["Shot by", "Jimmy Liu"], ["Colour by", "Jimmy Liu"], ["Camera", "Sony A7M4"], ["Runtime", "04:02"]] },
   { id: 2, type: "photo", title: "Film", category: "Film Photography", year: 2026, images: [], count: 1, colorClass: "ph-2" },
   { id: 4, type: "photo", title: "Digital", category: "Digital Photography", year: 2026, images: [], count: 1, colorClass: "ph-6" },
   { id: 6, type: "photo", title: "Mobile", category: "Mobile Photography", year: 2026, images: [], count: 1, colorClass: "ph-8" }

@@ -78,28 +78,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   render();
 
-  if (work.credits) {
-    const rows = [
-      ["Directed by", work.credits.directedBy],
-      ["Written by", work.credits.writtenBy],
-      ["Cinematography by", work.credits.cinematographyBy],
-      ["Edited by", work.credits.editedBy],
-      ["Colour by", work.credits.colourBy],
-      ["Camera", work.credits.camera],
-      ["Aspect Ratio", work.credits.aspectRatio],
-      ["Runtime", work.credits.runtime],
-      ["Year", work.year]
-    ].filter(([, value]) => value);
-
-    if (rows.length) {
-      els.creditsSection.hidden = false;
-      els.creditsTable.innerHTML = rows.map(([label, value]) => `
-        <div class="credits-row">
-          <span class="credits-label">${label}</span>
-          <span class="credits-value">${value}</span>
-        </div>
-      `).join("");
-    }
+  if (work.credits && work.credits.length) {
+    els.creditsSection.hidden = false;
+    els.creditsTable.innerHTML = work.credits.map(([label, value]) => `
+      <div class="credits-row">
+        <span class="credits-label">${label}</span>
+        <span class="credits-value">${value}</span>
+      </div>
+    `).join("");
   }
 
   document.querySelector(".nav-toggle").addEventListener("click", () => {
