@@ -1,12 +1,12 @@
 :root {
-  --bg: #ffffff;
+  --bg: #eee9e5;
   --bg-elevated: #f0f0f0;
   --text: #141414;
   --text-muted: #6b6b6b;
   --accent: #b8783a;
   --border: rgba(0, 0, 0, 0.1);
-  --font-display: "Geomini", "PingFang SC", "Microsoft YaHei", sans-serif;
-  --font-body: "Geomini", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-display: "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-body: "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -42,7 +42,7 @@ button { font: inherit; cursor: pointer; }
 }
 
 .site-header.scrolled {
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(238, 233, 229, 0.55);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-bottom-color: var(--border);
@@ -473,7 +473,7 @@ button { font: inherit; cursor: pointer; }
     left: 0;
     flex-direction: column;
     gap: 0;
-    background: rgba(255, 255, 255, 0.55);
+    background: rgba(238, 233, 229, 0.55);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     border-bottom: 1px solid var(--border);
