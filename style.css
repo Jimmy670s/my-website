@@ -322,6 +322,7 @@ button { font: inherit; cursor: pointer; }
   font-size: 0.95rem;
   line-height: 1.55;
   max-width: 560px;
+  text-align: justify;
 }
 
 .about-awards {
@@ -346,7 +347,6 @@ button { font: inherit; cursor: pointer; }
 
 .about-services {
   margin-top: clamp(72px, 14vh, 140px);
-  text-align: right;
 }
 
 .about-services h2 {
