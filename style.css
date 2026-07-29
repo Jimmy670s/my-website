@@ -266,29 +266,29 @@ button { font: inherit; cursor: pointer; }
 
 /* ---------- About page ---------- */
 .about-page {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: clamp(100px, 16vh, 160px) clamp(20px, 5vw, 56px) 80px;
+  padding: clamp(88px, 13vh, 120px) clamp(20px, 4vw, 40px) 64px;
 }
 
 .about-topline {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
-  letter-spacing: 0.3px;
-  margin-bottom: clamp(32px, 6vh, 64px);
+  letter-spacing: 0.2px;
+  margin-bottom: 40px;
 }
 
 .about-grid {
   display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: clamp(32px, 6vw, 80px);
+  grid-template-columns: 230px 1fr;
+  gap: clamp(28px, 5vw, 56px);
   align-items: start;
 }
 
 .about-label {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .about-photo {
@@ -304,8 +304,8 @@ button { font: inherit; cursor: pointer; }
 }
 
 .about-social {
-  margin-top: 16px;
-  font-size: 0.85rem;
+  margin-top: 10px;
+  font-size: 0.75rem;
   color: var(--text-muted);
 }
 
@@ -319,13 +319,13 @@ button { font: inherit; cursor: pointer; }
 
 .about-bio {
   color: var(--text);
-  font-size: 1.05rem;
-  line-height: 1.7;
-  max-width: 640px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  max-width: 560px;
 }
 
 .about-awards {
-  margin-top: clamp(40px, 6vh, 64px);
+  margin-top: 48px;
   display: flex;
   flex-direction: column;
 }
@@ -334,9 +334,9 @@ button { font: inherit; cursor: pointer; }
   display: grid;
   grid-template-columns: 1fr 1fr 1.6fr auto;
   gap: 16px;
-  padding: 10px 0;
+  padding: 7px 0;
   border-bottom: 1px solid var(--border);
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
 }
 
@@ -345,19 +345,27 @@ button { font: inherit; cursor: pointer; }
 }
 
 .about-services {
-  margin-top: clamp(60px, 10vh, 100px);
+  margin-top: clamp(72px, 14vh, 140px);
 }
 
 .about-services h2 {
-  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-size: clamp(1.9rem, 4.4vw, 3.1rem);
   font-weight: 500;
+  letter-spacing: -0.02em;
   color: var(--text);
-  line-height: 1.2;
+  line-height: 1.12;
 }
 
 .about-services h2.dim {
-  color: var(--text-muted);
-  opacity: 0.4;
+  color: #c9c9c9;
+}
+
+.about-services h2.dim + h2.dim {
+  color: #dcdcdc;
+}
+
+.about-services h2.dim + h2.dim + h2.dim {
+  color: #e6e6e6;
 }
 
 /* ---------- Footer ---------- */

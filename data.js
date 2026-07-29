@@ -60,5 +60,5 @@ const ABOUT = {
   awards: [
     // ["Client", "Award Show", "Award Name", "25'"]
   ],
-  services: ["Photography", "Film"]
+  services: ["Photography", "Cinematography", "Colour Grading", "Editing"]
 };
