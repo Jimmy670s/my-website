@@ -168,8 +168,9 @@ button { font: inherit; cursor: pointer; }
 /* ---------- Work grid ---------- */
 .work-section {
   padding: clamp(96px, 16vh, 180px) clamp(20px, 5vw, 56px) clamp(48px, 8vw, 96px);
-  /* Keeps the fixed header from covering the grid when jumping to #work */
-  scroll-margin-top: 76px;
+  /* Land flush with the top of the viewport so the hero clip is fully scrolled
+     past — the section's own top padding keeps the cards clear of the header. */
+  scroll-margin-top: 0;
 }
 
 .work-grid {
