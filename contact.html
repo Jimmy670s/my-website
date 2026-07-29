@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JIMMY LIU — Work</title>
+<title>Contact — JIMMY LIU</title>
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
@@ -12,38 +12,36 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css?v=202607290254">
 </head>
-<body class="page-work">
+<body class="page-about">
 
-<header class="site-header on-dark">
+<header class="site-header scrolled">
   <div class="header-inner">
     <a href="index.html" class="logo">JIMMY LIU</a>
     <nav class="nav">
       <a href="index.html">Work</a>
       <a href="about.html">Information</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="active">Contact</a>
     </nav>
     <button class="nav-toggle" aria-label="Open menu">☰</button>
   </div>
 </header>
 
-<main class="work-page">
-  <a href="index.html" class="back-link" data-back-link>
-    <span class="back-arrow" aria-hidden="true">←</span> Back
-  </a>
-  <div class="work-viewer">
-    <button class="viewer-nav viewer-prev" data-viewer-prev aria-label="Previous" hidden>‹</button>
-    <div class="viewer-stage" data-viewer-stage></div>
-    <button class="viewer-nav viewer-next" data-viewer-next aria-label="Next" hidden>›</button>
-  </div>
-  <div class="work-page-info">
-    <h1 data-work-title></h1>
-    <p data-work-meta></p>
+<main class="about-page">
+  <div class="about-topline">
+    <span data-about-clock></span>
   </div>
 
-  <section class="credits" data-credits-section hidden>
-    <h2>Credits</h2>
-    <div class="credits-table" data-credits-table></div>
-  </section>
+  <div class="contact-grid">
+    <div>
+      <p class="about-label">(Email)</p>
+      <a class="contact-email" data-contact-email href="#"></a>
+    </div>
+
+    <div>
+      <p class="about-label">(Elsewhere)</p>
+      <ul class="contact-social" data-contact-social></ul>
+    </div>
+  </div>
 </main>
 
 <footer class="site-footer">
@@ -51,6 +49,6 @@
 </footer>
 
 <script src="data.js?v=202607290254"></script>
-<script src="work.js?v=202607290254"></script>
+<script src="contact.js?v=202607290254"></script>
 </body>
 </html>

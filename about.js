@@ -8,15 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
     photoEl.classList.add("about-photo-placeholder");
   }
 
-  const socialLinks = [
-    ["Instagram", SITE.instagram],
-    ["Twitter", SITE.twitter],
-    ["LinkedIn", SITE.linkedin]
-  ].filter(([, url]) => url);
-  socialLinks.push(["Email", `mailto:${SITE.email}`]);
-
-  document.querySelector("[data-about-social]").innerHTML = socialLinks
-    .map(([label, url]) => `<a href="${url}" target="_blank" rel="noopener">${label}</a>`)
+  document.querySelector("[data-about-social]").innerHTML = (SITE.social || [])
+    .map(([label, url]) => url
+      ? `<a href="${url}" target="_blank" rel="noopener">${label}</a>`
+      : `<span class="pending">${label}</span>`)
     .join(", ");
 
   if (ABOUT.awards && ABOUT.awards.length) {

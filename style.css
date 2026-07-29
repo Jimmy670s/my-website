@@ -328,6 +328,50 @@ button { font: inherit; cursor: pointer; }
   color: var(--accent);
 }
 
+/* Social entry with no URL filled in yet */
+.pending {
+  color: var(--text-muted);
+}
+
+/* ---------- Contact page ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 24% 50%;
+  justify-content: space-between;
+  align-items: start;
+  flex: 1;
+}
+
+.contact-email {
+  display: inline-block;
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2px;
+  transition: border-color 0.2s ease;
+}
+
+.contact-email:hover {
+  border-bottom-color: var(--text);
+}
+
+.contact-social {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+}
+
+.contact-social a {
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+.contact-social a:hover {
+  color: var(--accent);
+}
+
 .about-bio {
   color: var(--text);
   font-size: 0.95rem;
@@ -568,7 +612,8 @@ button { font: inherit; cursor: pointer; }
   .credits-row { flex-direction: column; gap: 4px; }
   .credits-value { text-align: left; }
 
-  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  .about-grid,
+  .contact-grid { grid-template-columns: 1fr; gap: 32px; }
   .about-photo { max-width: 260px; }
   .about-services { padding-top: 56px; }
   .about-award-row { grid-template-columns: 1fr 1fr; row-gap: 2px; }

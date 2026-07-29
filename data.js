@@ -5,13 +5,18 @@
  * 暂时留空(""）的字段会自动显示一个占位色块,不会报错或显示"图片损坏"图标。
  */
 
+// social: 社交媒体链接,[显示名称, 链接] 的数组。
+// 链接留空时会显示成灰色文字(不可点击),填上网址后自动变成可点链接。
 const SITE = {
   name: "JIMMY LIU",
   tagline: "Portfolio / 作品集",
   email: "streetlights670@gmail.com",
-  instagram: "", // 例如 "https://instagram.com/你的用户名"
-  twitter: "",
-  linkedin: ""
+  social: [
+    ["Instagram", ""],
+    ["YouTube", ""],
+    ["Bilibili", ""],
+    ["小红书", ""]
+  ]
 };
 
 const HERO = {
