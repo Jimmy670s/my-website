@@ -321,7 +321,6 @@ button { font: inherit; cursor: pointer; }
   color: var(--text);
   font-size: 0.95rem;
   line-height: 1.55;
-  max-width: 560px;
   text-align: justify;
 }
 
