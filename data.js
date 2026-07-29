@@ -12,7 +12,7 @@ const SITE = {
   tagline: "Portfolio / 作品集",
   email: "streetlights670@gmail.com",
   social: [
-    ["Instagram", ""],
+    ["Instagram", "https://www.instagram.com/67llllm/"],
     ["YouTube", ""],
     ["Bilibili", ""],
     ["小红书", ""]
