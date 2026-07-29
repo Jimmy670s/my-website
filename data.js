@@ -53,7 +53,7 @@ const WORKS = [
 // awards: Information 页的获奖列表,格式 [Client, 评选/奖项方, 奖项名称, 年份],不需要就留空数组(不会显示这个板块)
 // services: 页面底部堆叠显示的擅长方向,第一个高亮显示,其余的会变浅
 const ABOUT = {
-  bio: "Hi, I'm Jimmy — a creator focused on film and photography. My work moves between still images and moving pictures, drawn to the fleeting relationships between light, the city, and people. This is a collection of my recent work — feel free to reach out.",
+  bio: "Hi, I'm Jimmy — a filmmaker and colourist working between London and China. I specialise in cinematography and colour grading, and I've worked on every stage from shoot to delivery. My work leans towards the emotional and the human — how a moment feels, not just how it looks. My short films have screened at Folkestone and RTF Real-Time Film Festivals. Feel free to reach out.",
   avatar: "assets/avatar.jpg", // 留空则显示渐变占位色块
   clockCity: "London",
   clockTimeZone: "Europe/London",
