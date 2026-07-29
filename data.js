@@ -13,9 +13,9 @@ const SITE = {
   email: "streetlights670@gmail.com",
   social: [
     ["Instagram", "https://www.instagram.com/67llllm/"],
-    ["YouTube", ""],
-    ["Bilibili", ""],
-    ["小红书", ""]
+    ["YouTube", "https://www.youtube.com/@JimmyLiu-670"],
+    ["Bilibili", "https://space.bilibili.com/26540961"],
+    ["小红书", "https://xhslink.cn/m/9TNwuFF6vyH"]
   ]
 };
 
