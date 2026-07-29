@@ -9,7 +9,9 @@ const SITE = {
   name: "JIMMY LIU",
   tagline: "Portfolio / 作品集",
   email: "streetlights670@gmail.com",
-  instagram: "" // 例如 "https://instagram.com/你的用户名"
+  instagram: "", // 例如 "https://instagram.com/你的用户名"
+  twitter: "",
+  linkedin: ""
 };
 
 const HERO = {
@@ -48,7 +50,15 @@ const WORKS = [
   { id: 6, type: "photo", title: "Mobile", category: "Mobile Photography", year: 2026, images: [], count: 1, colorClass: "ph-8" }
 ];
 
+// awards: Information 页的获奖列表,格式 [Client, 评选/奖项方, 奖项名称, 年份],不需要就留空数组(不会显示这个板块)
+// services: 页面底部堆叠显示的擅长方向,第一个高亮显示,其余的会变浅
 const ABOUT = {
   bio: "Hi, I'm Jimmy — a creator focused on film and photography. My work moves between still images and moving pictures, drawn to the fleeting relationships between light, the city, and people. This is a collection of my recent work — feel free to reach out.",
-  avatar: "" // assets/avatar.jpg,留空则显示渐变占位圆形头像
+  avatar: "", // assets/avatar.jpg,留空则显示渐变占位色块
+  clockCity: "London",
+  clockTimeZone: "Europe/London",
+  awards: [
+    // ["Client", "Award Show", "Award Name", "25'"]
+  ],
+  services: ["Photography", "Film"]
 };

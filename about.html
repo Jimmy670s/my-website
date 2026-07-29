@@ -25,45 +25,33 @@
   </div>
 </header>
 
-<section class="about-section">
-  <div class="about-avatar" data-about-avatar></div>
-  <p class="about-bio" data-about-bio></p>
-  <ul class="about-contact">
-    <li><a data-about-email href="#"></a></li>
-    <li><a data-about-instagram href="#" target="_blank" rel="noopener">Instagram</a></li>
-  </ul>
-</section>
+<main class="about-page">
+  <div class="about-topline">
+    <span data-about-clock></span>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-left">
+      <p class="about-label">(About me)</p>
+      <div class="about-photo" data-about-photo></div>
+      <p class="about-social" data-about-social></p>
+    </div>
+
+    <div class="about-right">
+      <p class="about-bio" data-about-bio></p>
+
+      <div class="about-awards" data-about-awards hidden></div>
+
+      <div class="about-services" data-about-services></div>
+    </div>
+  </div>
+</main>
 
 <footer class="site-footer">
   <p>&copy; <span id="year"></span> JIMMY LIU. All rights reserved.</p>
 </footer>
 
 <script src="data.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    document.querySelector("[data-about-bio]").textContent = ABOUT.bio;
-    const emailLink = document.querySelector("[data-about-email]");
-    emailLink.textContent = SITE.email;
-    emailLink.href = `mailto:${SITE.email}`;
-
-    const igLink = document.querySelector("[data-about-instagram]");
-    if (SITE.instagram) {
-      igLink.href = SITE.instagram;
-    } else {
-      igLink.style.display = "none";
-    }
-
-    const avatarEl = document.querySelector("[data-about-avatar]");
-    if (ABOUT.avatar) {
-      avatarEl.style.backgroundImage = `url(${ABOUT.avatar})`;
-    }
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    document.querySelector(".nav-toggle").addEventListener("click", () => {
-      document.querySelector(".nav").classList.toggle("nav-open");
-    });
-  });
-</script>
+<script src="about.js"></script>
 </body>
 </html>
