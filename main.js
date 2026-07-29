@@ -4,9 +4,21 @@ document.addEventListener("DOMContentLoaded", () => {
   setupNavScroll();
   setupCardReveal();
   setupNavToggle();
+  applyInitialHash();
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
+
+// Arriving at index.html#work from another page lands short, because the browser
+// jumps to the anchor while the grid is still empty. Re-apply it once rendered.
+function applyInitialHash() {
+  if (!window.location.hash) return;
+  const target = document.querySelector(window.location.hash);
+  if (!target) return;
+  requestAnimationFrame(() => {
+    target.scrollIntoView({ behavior: "instant", block: "start" });
+  });
+}
 
 function renderHero() {
   const heroEl = document.querySelector("[data-hero]");
