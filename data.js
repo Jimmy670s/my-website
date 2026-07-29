@@ -11,7 +11,11 @@ const SITE = {
   name: "JIMMY LIU",
   tagline: "Portfolio / 作品集",
   email: "streetlights670@gmail.com",
-  phone: "", // 例如 "+44 7123 456789"
+  // phones: [地区标签, 显示号码, 拨号用的国际格式]
+  phones: [
+    ["UK", "+44 7756 702428", "+447756702428"],
+    ["CN", "+86 176 8195 8670", "+8617681958670"]
+  ],
   wechat: "", // 微信号
   social: [
     ["Instagram", "https://www.instagram.com/67llllm/"],

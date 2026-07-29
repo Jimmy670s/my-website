@@ -1,10 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
   // [label, value, link] — link omitted means the value is shown as plain text.
   const entries = [
-    ["Email", SITE.email, SITE.email ? `mailto:${SITE.email}` : ""],
-    ["Phone", SITE.phone, SITE.phone ? `tel:${SITE.phone.replace(/\s+/g, "")}` : ""],
-    ["WeChat", SITE.wechat, ""]
+    ["Email", SITE.email, SITE.email ? `mailto:${SITE.email}` : ""]
   ];
+
+  (SITE.phones || []).forEach(([region, display, dial]) => {
+    entries.push([`Phone — ${region}`, display, dial ? `tel:${dial}` : ""]);
+  });
+
+  entries.push(["WeChat", SITE.wechat, ""]);
 
   document.querySelector("[data-contact-list]").innerHTML = entries
     .map(([label, value, link]) => `
