@@ -11,6 +11,8 @@ const SITE = {
   name: "JIMMY LIU",
   tagline: "Portfolio / 作品集",
   email: "streetlights670@gmail.com",
+  phone: "", // 例如 "+44 7123 456789"
+  wechat: "", // 微信号
   social: [
     ["Instagram", "https://www.instagram.com/67llllm/"],
     ["YouTube", "https://www.youtube.com/@JimmyLiu-670"],

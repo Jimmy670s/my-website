@@ -1,13 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const emailEl = document.querySelector("[data-contact-email]");
-  emailEl.textContent = SITE.email;
-  emailEl.href = `mailto:${SITE.email}`;
+  // [label, value, link] — link omitted means the value is shown as plain text.
+  const entries = [
+    ["Email", SITE.email, SITE.email ? `mailto:${SITE.email}` : ""],
+    ["Phone", SITE.phone, SITE.phone ? `tel:${SITE.phone.replace(/\s+/g, "")}` : ""],
+    ["WeChat", SITE.wechat, ""]
+  ];
 
-  document.querySelector("[data-contact-social]").innerHTML = (SITE.social || [])
-    .map(([label, url]) => `<li>${url
-      ? `<a href="${url}" target="_blank" rel="noopener">${label}</a>`
-      : `<span class="pending">${label}</span>`}</li>`)
-    .join("");
+  document.querySelector("[data-contact-list]").innerHTML = entries
+    .map(([label, value, link]) => `
+      <div class="contact-row">
+        <p class="about-label">(${label})</p>
+        ${value
+          ? (link
+              ? `<a class="contact-value" href="${link}">${value}</a>`
+              : `<span class="contact-value">${value}</span>`)
+          : `<span class="contact-value pending">Coming soon</span>`}
+      </div>
+    `).join("");
 
   function updateClock() {
     const clockEl = document.querySelector("[data-about-clock]");
