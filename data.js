@@ -11,11 +11,8 @@ const SITE = {
   name: "JIMMY LIU",
   tagline: "Portfolio / 作品集",
   email: "streetlights670@gmail.com",
-  // phones: [地区标签, 显示号码, 拨号用的国际格式]
-  phones: [
-    ["UK", "+44 7756 702428", "+447756702428"],
-    ["CN", "+86 176 8195 8670", "+8617681958670"]
-  ],
+  // whatsapp: [显示文字, 号码(纯数字,不含 + 和空格)]
+  whatsapp: ["+44 7756 702428", "447756702428"],
   wechat: "Jimmy670", // 微信号
   wechatQR: "", // 填上二维码图片路径后,点击微信号会展开显示二维码
   social: [

@@ -4,9 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ["Email", SITE.email, SITE.email ? `mailto:${SITE.email}` : ""]
   ];
 
-  (SITE.phones || []).forEach(([region, display, dial]) => {
-    entries.push([`Phone — ${region}`, display, dial ? `tel:${dial}` : ""]);
-  });
+  if (SITE.whatsapp && SITE.whatsapp[0]) {
+    const [display, number] = SITE.whatsapp;
+    entries.push(["WhatsApp", display, number ? `https://wa.me/${number}` : ""]);
+  }
 
   document.querySelector("[data-contact-list]").innerHTML = entries
     .map(([label, value, link]) => `
