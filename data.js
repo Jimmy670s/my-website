@@ -17,7 +17,7 @@ const SITE = {
     ["CN", "+86 176 8195 8670", "+8617681958670"]
   ],
   wechat: "Jimmy670", // 微信号
-  wechatQR: "assets/wechat-qr.png", // 点击微信号后弹出的二维码图片
+  wechatQR: "", // 填上二维码图片路径后,点击微信号会展开显示二维码
   social: [
     ["Instagram", "https://www.instagram.com/67llllm/"],
     ["YouTube", "https://www.youtube.com/@JimmyLiu-670"],

@@ -23,8 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="contact-row">
         <p class="about-label">(WeChat)</p>
         ${SITE.wechat
-          ? `<button class="contact-value contact-wechat" data-wechat-toggle aria-expanded="false">${SITE.wechat}</button>
-             ${SITE.wechatQR ? `<div class="wechat-qr" data-wechat-qr hidden><img src="${SITE.wechatQR}" alt="WeChat QR code"></div>` : ""}`
+          ? (SITE.wechatQR
+              ? `<button class="contact-value contact-wechat" data-wechat-toggle aria-expanded="false">${SITE.wechat}</button>
+                 <div class="wechat-qr" data-wechat-qr hidden><img src="${SITE.wechatQR}" alt="WeChat QR code"></div>`
+              : `<span class="contact-value">${SITE.wechat}</span>`)
           : `<span class="contact-value pending">Coming soon</span>`}
       </div>
     `;
