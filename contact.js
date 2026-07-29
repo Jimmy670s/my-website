@@ -8,8 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     entries.push([`Phone — ${region}`, display, dial ? `tel:${dial}` : ""]);
   });
 
-  entries.push(["WeChat", SITE.wechat, ""]);
-
   document.querySelector("[data-contact-list]").innerHTML = entries
     .map(([label, value, link]) => `
       <div class="contact-row">
@@ -20,7 +18,26 @@ document.addEventListener("DOMContentLoaded", () => {
               : `<span class="contact-value">${value}</span>`)
           : `<span class="contact-value pending">Coming soon</span>`}
       </div>
-    `).join("");
+    `).join("")
+    + `
+      <div class="contact-row">
+        <p class="about-label">(WeChat)</p>
+        ${SITE.wechat
+          ? `<button class="contact-value contact-wechat" data-wechat-toggle aria-expanded="false">${SITE.wechat}</button>
+             ${SITE.wechatQR ? `<div class="wechat-qr" data-wechat-qr hidden><img src="${SITE.wechatQR}" alt="WeChat QR code"></div>` : ""}`
+          : `<span class="contact-value pending">Coming soon</span>`}
+      </div>
+    `;
+
+  const wechatBtn = document.querySelector("[data-wechat-toggle]");
+  const wechatQR = document.querySelector("[data-wechat-qr]");
+  if (wechatBtn && wechatQR) {
+    wechatBtn.addEventListener("click", () => {
+      const open = wechatQR.hidden;
+      wechatQR.hidden = !open;
+      wechatBtn.setAttribute("aria-expanded", String(open));
+    });
+  }
 
   function updateClock() {
     const clockEl = document.querySelector("[data-about-clock]");

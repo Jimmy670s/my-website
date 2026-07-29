@@ -361,6 +361,37 @@ a.contact-value:hover {
   color: var(--text-muted);
 }
 
+button.contact-wechat {
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  padding: 0 0 2px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+button.contact-wechat:hover {
+  border-bottom-color: var(--text);
+}
+
+.wechat-qr {
+  margin-top: 16px;
+  width: 180px;
+  animation: qrFade 0.25s ease;
+}
+
+.wechat-qr img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@keyframes qrFade {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .about-bio {
   color: var(--text);
   font-size: 0.95rem;

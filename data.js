@@ -16,7 +16,8 @@ const SITE = {
     ["UK", "+44 7756 702428", "+447756702428"],
     ["CN", "+86 176 8195 8670", "+8617681958670"]
   ],
-  wechat: "", // 微信号
+  wechat: "Jimmy670", // 微信号
+  wechatQR: "assets/wechat-qr.png", // 点击微信号后弹出的二维码图片
   social: [
     ["Instagram", "https://www.instagram.com/67llllm/"],
     ["YouTube", "https://www.youtube.com/@JimmyLiu-670"],
