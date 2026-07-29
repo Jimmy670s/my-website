@@ -21,7 +21,6 @@ function renderHero() {
   const fallbackEl = heroEl.querySelector("[data-hero-fallback]");
 
   if (HERO.video) {
-    videoEl.src = HERO.video;
     if (HERO.poster) videoEl.poster = HERO.poster;
     videoEl.addEventListener("error", () => {
       videoEl.style.display = "none";
@@ -29,6 +28,22 @@ function renderHero() {
     });
     videoEl.style.display = "block";
     fallbackEl.style.display = "none";
+
+    // The hero clip is by far the heaviest asset. Holding it back until the rest
+    // of the page has loaded stops it from starving the poster images of
+    // bandwidth on slow connections — until then the poster frame stands in.
+    const startVideo = () => {
+      // Wait until enough has buffered, otherwise play() is rejected silently.
+      videoEl.addEventListener("canplay", () => {
+        videoEl.play().catch(() => {});
+      }, { once: true });
+      videoEl.src = HERO.video;
+    };
+    if (document.readyState === "complete") {
+      startVideo();
+    } else {
+      window.addEventListener("load", startVideo, { once: true });
+    }
   } else {
     videoEl.style.display = "none";
     fallbackEl.style.display = "block";
