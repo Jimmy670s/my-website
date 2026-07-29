@@ -54,11 +54,11 @@ const WORKS = [
 // services: 页面底部堆叠显示的擅长方向,第一个高亮显示,其余的会变浅
 const ABOUT = {
   bio: "Hi, I'm Jimmy — a creator focused on film and photography. My work moves between still images and moving pictures, drawn to the fleeting relationships between light, the city, and people. This is a collection of my recent work — feel free to reach out.",
-  avatar: "", // assets/avatar.jpg,留空则显示渐变占位色块
+  avatar: "assets/avatar.jpg", // 留空则显示渐变占位色块
   clockCity: "London",
   clockTimeZone: "Europe/London",
   awards: [
     // ["Client", "Award Show", "Award Name", "25'"]
   ],
-  services: ["Photography", "Cinematography", "Colour Grading", "Editing"]
+  services: ["Cinematography", "Colour Grading", "Editing"]
 };
