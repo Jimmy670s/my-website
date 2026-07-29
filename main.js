@@ -9,15 +9,22 @@ document.addEventListener("DOMContentLoaded", () => {
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
 
-// Arriving at index.html#work from another page lands short, because the browser
-// jumps to the anchor while the grid is still empty. Re-apply it once rendered.
+// Arriving at index.html#work from another page lands in the wrong place: the
+// browser resolves the anchor while the grid is still empty, and lazy images
+// shift the layout afterwards. Re-apply it once now and again once settled.
 function applyInitialHash() {
   if (!window.location.hash) return;
-  const target = document.querySelector(window.location.hash);
+  let target;
+  try {
+    target = document.querySelector(window.location.hash);
+  } catch {
+    return; // hash isn't a valid selector
+  }
   if (!target) return;
-  requestAnimationFrame(() => {
-    target.scrollIntoView({ behavior: "instant", block: "start" });
-  });
+
+  const jump = () => target.scrollIntoView({ behavior: "instant", block: "start" });
+  jump();
+  window.addEventListener("load", jump, { once: true });
 }
 
 function renderHero() {
