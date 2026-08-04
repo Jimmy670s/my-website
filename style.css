@@ -533,6 +533,7 @@ button.contact-wechat:hover {
 }
 
 .viewer-stage {
+  width: 100%;
   max-width: 100%;
   max-height: 78vh;
   display: flex;
@@ -545,6 +546,60 @@ button.contact-wechat:hover {
   max-width: 100%;
   max-height: 78vh;
   border-radius: 0;
+}
+
+/* 视频播放器。每部片子画幅不同,--ar(宽/高)由 data.js 的 videoAspect 提供,
+   视频元数据加载后会用真实比例覆盖。width 里的 78vh 换算保证高度不超出屏幕。 */
+.video-player {
+  position: relative;
+  width: min(100%, calc(78vh * var(--ar, 1.7778)));
+  aspect-ratio: var(--ar, 1.7778);
+  background: #000;
+}
+
+.viewer-stage .video-player video {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+}
+
+.video-play {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: clamp(58px, 6.5vw, 84px);
+  height: clamp(58px, 6.5vw, 84px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.28);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.4s ease, transform 0.4s ease,
+              background 0.25s ease, border-color 0.25s ease;
+}
+
+.video-play svg {
+  width: 34%;
+  height: 34%;
+  fill: #fff;
+  transform: translateX(8%);
+}
+
+.video-play:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: #fff;
+  transform: scale(1.06);
+}
+
+.video-player.is-playing .video-play {
+  opacity: 0;
+  transform: scale(1.2);
+  pointer-events: none;
 }
 
 .stage-placeholder {

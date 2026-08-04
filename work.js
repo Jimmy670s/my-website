@@ -62,7 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (isVideo) {
       if (work.video) {
-        els.stage.innerHTML = `<video src="${work.video}" ${work.poster ? `poster="${work.poster}"` : ""} controls autoplay playsinline></video>`;
+        els.stage.innerHTML = videoPlayerMarkup(work);
+        setupVideoPlayer(els.stage.querySelector("[data-video-player]"));
       } else {
         els.stage.innerHTML = `<div class="stage-placeholder ${work.colorClass}"><p>Video coming soon</p></div>`;
       }
@@ -104,3 +105,43 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// 封面 + 播放按钮。preload="none" 是关键:不点击就一个字节的视频都不下载,
+// 国内访客打开作品页的成本只有一张封面图。控制条等按下播放后才交给浏览器。
+function videoPlayerMarkup(work) {
+  const ratio = work.videoAspect || 16 / 9;
+  const poster = work.videoPoster || work.poster;
+  return `
+    <div class="video-player" style="--ar:${ratio}" data-video-player>
+      <video src="${work.video}" ${poster ? `poster="${poster}"` : ""} preload="none" playsinline></video>
+      <button class="video-play" type="button" aria-label="Play ${work.title}">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg>
+      </button>
+    </div>`;
+}
+
+function setupVideoPlayer(player) {
+  if (!player) return;
+  const video = player.querySelector("video");
+  const button = player.querySelector(".video-play");
+
+  // preload="none" 时视频还没有尺寸,先用 data.js 里的 videoAspect 占位;
+  // 元数据一到就用真实比例校正,所以比例填错也不会裁到画面。
+  video.addEventListener("loadedmetadata", () => {
+    if (video.videoWidth && video.videoHeight) {
+      player.style.setProperty("--ar", (video.videoWidth / video.videoHeight).toFixed(4));
+    }
+  }, { once: true });
+
+  const start = () => {
+    if (player.classList.contains("is-playing")) return;
+    player.classList.add("is-playing");
+    video.controls = true;
+    video.play().catch(() => {});
+  };
+
+  button.addEventListener("click", start);
+  video.addEventListener("click", () => {
+    if (!video.controls) start();
+  });
+}
