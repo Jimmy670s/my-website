@@ -41,7 +41,7 @@ const HERO = {
 // photo 类型: images 是这一组照片的路径数组; 如果还没有真实图片,用 count 指定占位图张数
 // credits: 详情页底部 Credits 表格,是 [标签, 内容] 的数组,按填的顺序显示;不需要的行直接不写
 const WORKS = [
-  { id: 9, type: "video", title: "Cascade", category: "Visual Poem", year: 2023, video: "", poster: "assets/poster-cascade.jpg", coverVideo: "assets/cover-cascade.mp4", colorClass: "ph-1",
+  { id: 9, type: "video", title: "Cascade", category: "Visual Poem", year: 2023, video: "assets/film-cascade.mp4", videoPoster: "assets/still-cascade.jpg", videoAspect: 1.8947, poster: "assets/poster-cascade.jpg", coverVideo: "assets/cover-cascade.mp4", colorClass: "ph-1",
     credits: [["Directed by", "Jimmy Liu"], ["Cinematography by", "Jimmy Liu"], ["Colour by", "Jimmy Liu"], ["Camera", "Fujifilm XT4"], ["Runtime", "05:11"], ["Location", "London, UK"]] },
   { id: 1, type: "video", title: "Soleil's Summer", category: "Short Film", year: 2024, video: "", poster: "assets/poster-soleils-summer.jpg", coverVideo: "assets/cover-soleils-summer.mp4", colorClass: "ph-1",
     credits: [["Directed by", "Yuguang Wang"], ["Cinematography by", "Jimmy Liu"], ["Camera", "ARRI Alexa 35"], ["Runtime", "15:03"], ["Location", "London, UK"]] },
