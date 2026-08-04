@@ -24,28 +24,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const slideCount = isVideo ? 1 : ((work.images && work.images.length) || work.count || 1);
   let current = 0;
 
+  // 翻页手势(方向键 / 左右滑动)只在多图作品上绑定。视频只有一张"幻灯片",
+  // 绑了反而会抢走播放器的操作:手机上拖进度条是横向滑动,会被当成翻页从而
+  // 重建 video 元素、播放中断;电脑上按左右方向键快退快进同理。
   if (slideCount > 1) {
     els.prevBtn.hidden = false;
     els.nextBtn.hidden = false;
     els.prevBtn.addEventListener("click", () => step(-1));
     els.nextBtn.addEventListener("click", () => step(1));
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") step(-1);
+      if (e.key === "ArrowRight") step(1);
+    });
+
+    let touchStartX = null;
+    els.stage.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].clientX;
+    }, { passive: true });
+    els.stage.addEventListener("touchend", (e) => {
+      if (touchStartX === null) return;
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 40) step(dx > 0 ? -1 : 1);
+      touchStartX = null;
+    }, { passive: true });
   }
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowLeft") step(-1);
-    if (e.key === "ArrowRight") step(1);
-  });
-
-  let touchStartX = null;
-  els.stage.addEventListener("touchstart", (e) => {
-    touchStartX = e.changedTouches[0].clientX;
-  }, { passive: true });
-  els.stage.addEventListener("touchend", (e) => {
-    if (touchStartX === null) return;
-    const dx = e.changedTouches[0].clientX - touchStartX;
-    if (Math.abs(dx) > 40) step(dx > 0 ? -1 : 1);
-    touchStartX = null;
-  }, { passive: true });
 
   function step(direction) {
     current = ((current + direction) % slideCount + slideCount) % slideCount;

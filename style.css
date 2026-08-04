@@ -583,11 +583,12 @@ button.contact-wechat:hover {
               background 0.25s ease, border-color 0.25s ease;
 }
 
+/* 三角形在 viewBox 里已经按重心对齐(占 9→18,重心落在中心 12),
+   这里不要再加 translateX,否则会叠加成肉眼可见的右偏。 */
 .video-play svg {
   width: 34%;
   height: 34%;
   fill: #fff;
-  transform: translateX(8%);
 }
 
 .video-play:hover {
