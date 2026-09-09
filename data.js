@@ -54,7 +54,15 @@ const WORKS = [
       "assets/soleil-16.jpg", "assets/soleil-17.jpg", "assets/soleil-18.jpg"
     ],
     credits: [["Directed by", "Yuguang Wang"], ["Cinematography by", "Jimmy Liu"], ["Camera", "ARRI Alexa 35"], ["Runtime", "15:03"], ["Location", "London, UK"]] },
+  // 同样只放剧照(这部是 4:3 满画幅,和 Soleil 的 2.35:1 不同,详情页会各自按原比例显示)
   { id: 3, type: "video", title: "Something Different Nothing Different", category: "Short Film", year: 2023, video: "", poster: "assets/poster-something-different.jpg", coverVideo: "assets/cover-something-different.mp4", colorClass: "ph-3",
+    images: [
+      "assets/sdnd-01.jpg", "assets/sdnd-02.jpg", "assets/sdnd-03.jpg",
+      "assets/sdnd-04.jpg", "assets/sdnd-05.jpg", "assets/sdnd-06.jpg",
+      "assets/sdnd-07.jpg", "assets/sdnd-08.jpg", "assets/sdnd-09.jpg",
+      "assets/sdnd-10.jpg", "assets/sdnd-11.jpg", "assets/sdnd-12.jpg",
+      "assets/sdnd-13.jpg"
+    ],
     credits: [["Written & Directed by", "Jimmy Liu"], ["Cinematography by", "UGU"], ["Colour by", "Jimmy Liu"], ["Camera", "DJI Ronin 4D"], ["Runtime", "08:34"], ["Location", "London, UK"]] },
   { id: 5, type: "video", title: "A Day of Reiko", category: "Mood Film", year: 2024, video: "", poster: "assets/poster-a-day-of-reiko.jpg", coverVideo: "assets/cover-a-day-of-reiko.mp4", colorClass: "ph-5",
     credits: [["Directed by", "Raine"], ["Cinematography by", "Jimmy Liu"], ["Colour by", "Jimmy Liu"], ["Camera", "Sony FX3"], ["Runtime", "02:18"], ["Location", "London, UK"]] },
