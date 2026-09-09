@@ -66,8 +66,20 @@ const WORKS = [
     ],
     credits: [["Written & Directed by", "Jimmy Liu"], ["Cinematography by", "UGU"], ["Colour by", "Jimmy Liu"], ["Camera", "DJI Ronin 4D"], ["Runtime", "08:34"], ["Location", "London, UK"]] },
   { id: 5, type: "video", title: "A Day of Reiko", category: "Mood Film", year: 2024, video: "", poster: "assets/poster-a-day-of-reiko.jpg", coverVideo: "assets/cover-a-day-of-reiko.mp4", colorClass: "ph-5",
+    images: [
+      "assets/reiko-02.jpg", // 带片名字幕 A DAY OF REIKO,放最前
+      "assets/reiko-01.jpg", "assets/reiko-03.jpg", "assets/reiko-04.jpg",
+      "assets/reiko-05.jpg", "assets/reiko-06.jpg", "assets/reiko-07.jpg",
+      "assets/reiko-08.jpg"
+    ],
     credits: [["Directed by", "Raine"], ["Cinematography by", "Jimmy Liu"], ["Colour by", "Jimmy Liu"], ["Camera", "Sony FX3"], ["Runtime", "02:18"], ["Location", "London, UK"]] },
   { id: 7, type: "video", title: "Yi Crafts", category: "Brand Film", year: 2024, video: "", poster: "assets/poster-yicrafts.jpg", coverVideo: "assets/cover-yicrafts.mp4", colorClass: "ph-7",
+    images: [
+      "assets/yi-02.jpg", // YICRAFTS 品牌片头,放最前
+      "assets/yi-01.jpg", "assets/yi-03.jpg", "assets/yi-04.jpg",
+      "assets/yi-05.jpg", "assets/yi-06.jpg", "assets/yi-07.jpg",
+      "assets/yi-08.jpg", "assets/yi-09.jpg", "assets/yi-10.jpg"
+    ],
     credits: [["Directed by", "Raine"], ["Cinematography by", "Jimmy Liu"], ["Colour by", "Jimmy Liu"], ["Camera", "Sony A7M4"], ["Runtime", "02:05"], ["Location", "London, UK"]] },
   { id: 10, type: "video", title: "Encounter", category: "Short Film", year: 2022, video: "", poster: "assets/poster-encounter.jpg", coverVideo: "assets/cover-encounter.mp4", colorClass: "ph-2",
     credits: [["Directed by", "Jimmy Liu"], ["Story by", "Jimmy Liu"], ["Camera", "Canon 5D2"], ["Runtime", "10:30"], ["Location", "Xinliao, CN"]] },
