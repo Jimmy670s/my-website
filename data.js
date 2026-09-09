@@ -57,7 +57,8 @@ const WORKS = [
   // 同样只放剧照(这部是 4:3 满画幅,和 Soleil 的 2.35:1 不同,详情页会各自按原比例显示)
   { id: 3, type: "video", title: "Something Different Nothing Different", category: "Short Film", year: 2023, video: "", poster: "assets/poster-something-different.jpg", coverVideo: "assets/cover-something-different.mp4", colorClass: "ph-3",
     images: [
-      "assets/sdnd-01.jpg", "assets/sdnd-02.jpg", "assets/sdnd-03.jpg",
+      "assets/sdnd-03.jpg", // 片头字幕那张,放在最前面
+      "assets/sdnd-01.jpg", "assets/sdnd-02.jpg",
       "assets/sdnd-04.jpg", "assets/sdnd-05.jpg", "assets/sdnd-06.jpg",
       "assets/sdnd-07.jpg", "assets/sdnd-08.jpg", "assets/sdnd-09.jpg",
       "assets/sdnd-10.jpg", "assets/sdnd-11.jpg", "assets/sdnd-12.jpg",

@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     nextBtn: document.querySelector("[data-viewer-next]"),
     title: document.querySelector("[data-work-title]"),
     meta: document.querySelector("[data-work-meta]"),
+    counter: document.querySelector("[data-viewer-counter]"),
     creditsSection: document.querySelector("[data-credits-section]"),
     creditsTable: document.querySelector("[data-credits-table]")
   };
@@ -55,8 +56,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { passive: true });
   }
 
+  // 到头就停,不循环。第一张再往前、最后一张再往后都没有反应。
   function step(direction) {
-    current = ((current + direction) % slideCount + slideCount) % slideCount;
+    const target = current + direction;
+    if (target < 0 || target >= slideCount) return;
+    current = target;
     render();
   }
 
@@ -64,9 +68,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const oldVideo = els.stage.querySelector("video");
     if (oldVideo) oldVideo.pause();
 
-    els.meta.textContent = slideCount > 1
-      ? `${work.category} · ${work.year} · ${current + 1}/${slideCount}`
-      : `${work.category} · ${work.year}`;
+    els.meta.textContent = `${work.category} · ${work.year}`;
+
+    // 张数指示移到图片下方,同时把到头的箭头置灰
+    if (slideCount > 1) {
+      const pad = (n) => String(n).padStart(2, "0");
+      els.counter.hidden = false;
+      els.counter.textContent = `${pad(current + 1)} / ${pad(slideCount)}`;
+      els.prevBtn.disabled = current === 0;
+      els.nextBtn.disabled = current === slideCount - 1;
+    }
 
     if (hasImages) {
       els.stage.innerHTML = `<img src="${work.images[current]}" alt="${work.title}">`;
@@ -84,11 +95,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 提前把前后两张读进浏览器缓存,翻页时不会白屏等加载(国内网速下差别明显)。
+  // 不循环,所以两头不用回绕着预加载。
   function preloadNeighbours() {
-    if (slideCount < 2) return;
-    [1, -1].forEach((d) => {
-      const i = ((current + d) % slideCount + slideCount) % slideCount;
-      new Image().src = work.images[i];
+    [current + 1, current - 1].forEach((i) => {
+      if (i >= 0 && i < slideCount) new Image().src = work.images[i];
     });
   }
 

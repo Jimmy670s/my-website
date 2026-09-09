@@ -633,6 +633,23 @@ button.contact-wechat:hover {
 .viewer-prev { left: clamp(-8px, 1vw, 8px); }
 .viewer-next { right: clamp(-8px, 1vw, 8px); }
 
+/* 到第一张/最后一张时箭头变暗且不可点(浏览器不会给 disabled 按钮派发 click) */
+.viewer-nav:disabled,
+.viewer-nav:disabled:hover {
+  opacity: 0.18;
+  cursor: default;
+}
+
+/* 图片下方的张数指示,例如 03 / 13 */
+.viewer-counter {
+  margin-top: 18px;
+  text-align: center;
+  color: rgba(244, 244, 242, 0.55);
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  font-variant-numeric: tabular-nums;
+}
+
 .work-page-info {
   text-align: center;
   margin-top: 32px;
