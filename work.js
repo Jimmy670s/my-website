@@ -81,7 +81,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (hasImages) {
       els.stage.innerHTML = `<img src="${work.images[current]}" alt="${work.title}">`;
-      preloadNeighbours();
+      // 等当前这张下完再去预加载前后两张。同时发起的话,预加载会跟正在看的
+      // 这张抢带宽,网速慢时第一张图要等更久。
+      const shown = els.stage.querySelector("img");
+      if (shown.complete) {
+        preloadNeighbours();
+      } else {
+        shown.addEventListener("load", preloadNeighbours, { once: true });
+        shown.addEventListener("error", preloadNeighbours, { once: true });
+      }
     } else if (isVideo) {
       if (work.video) {
         els.stage.innerHTML = videoPlayerMarkup(work);
