@@ -43,7 +43,16 @@ const HERO = {
 const WORKS = [
   { id: 9, type: "video", title: "Cascade", category: "Visual Poem", year: 2023, video: "assets/film-cascade.mp4", videoPoster: "assets/still-cascade.jpg", videoAspect: 1.8947, poster: "assets/poster-cascade.jpg", coverVideo: "assets/cover-cascade.mp4", colorClass: "ph-1",
     credits: [["Directed by", "Jimmy Liu"], ["Cinematography by", "Jimmy Liu"], ["Colour by", "Jimmy Liu"], ["Camera", "Fujifilm XT4"], ["Runtime", "05:11"], ["Location", "London, UK"]] },
+  // 只放剧照:type 保持 video(首页仍用自己的封面图和悬停预览),详情页因为有 images 而显示图集
   { id: 1, type: "video", title: "Soleil's Summer", category: "Short Film", year: 2024, video: "", poster: "assets/poster-soleils-summer.jpg", coverVideo: "assets/cover-soleils-summer.mp4", colorClass: "ph-1",
+    images: [
+      "assets/soleil-01.jpg", "assets/soleil-02.jpg", "assets/soleil-03.jpg",
+      "assets/soleil-04.jpg", "assets/soleil-05.jpg", "assets/soleil-06.jpg",
+      "assets/soleil-07.jpg", "assets/soleil-08.jpg", "assets/soleil-09.jpg",
+      "assets/soleil-10.jpg", "assets/soleil-11.jpg", "assets/soleil-12.jpg",
+      "assets/soleil-13.jpg", "assets/soleil-14.jpg", "assets/soleil-15.jpg",
+      "assets/soleil-16.jpg", "assets/soleil-17.jpg", "assets/soleil-18.jpg"
+    ],
     credits: [["Directed by", "Yuguang Wang"], ["Cinematography by", "Jimmy Liu"], ["Camera", "ARRI Alexa 35"], ["Runtime", "15:03"], ["Location", "London, UK"]] },
   { id: 3, type: "video", title: "Something Different Nothing Different", category: "Short Film", year: 2023, video: "", poster: "assets/poster-something-different.jpg", coverVideo: "assets/cover-something-different.mp4", colorClass: "ph-3",
     credits: [["Written & Directed by", "Jimmy Liu"], ["Cinematography by", "UGU"], ["Colour by", "Jimmy Liu"], ["Camera", "DJI Ronin 4D"], ["Runtime", "08:34"], ["Location", "London, UK"]] },

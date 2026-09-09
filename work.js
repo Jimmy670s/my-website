@@ -21,7 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
   els.title.textContent = work.title;
 
   const isVideo = work.type === "video";
-  const slideCount = isVideo ? 1 : ((work.images && work.images.length) || work.count || 1);
+  // 有 images 就按图集显示,不管 type 是什么。这样影片作品也可以只放剧照,
+  // 同时在首页保留它自己的封面图和悬停视频预览(那两个是按 type 走的)。
+  const hasImages = !!(work.images && work.images.length);
+  const slideCount = hasImages
+    ? work.images.length
+    : (isVideo ? 1 : (work.count || 1));
   let current = 0;
 
   // 翻页手势(方向键 / 左右滑动)只在多图作品上绑定。视频只有一张"幻灯片",
@@ -63,7 +68,10 @@ document.addEventListener("DOMContentLoaded", () => {
       ? `${work.category} · ${work.year} · ${current + 1}/${slideCount}`
       : `${work.category} · ${work.year}`;
 
-    if (isVideo) {
+    if (hasImages) {
+      els.stage.innerHTML = `<img src="${work.images[current]}" alt="${work.title}">`;
+      preloadNeighbours();
+    } else if (isVideo) {
       if (work.video) {
         els.stage.innerHTML = videoPlayerMarkup(work);
         setupVideoPlayer(els.stage.querySelector("[data-video-player]"));
@@ -71,13 +79,17 @@ document.addEventListener("DOMContentLoaded", () => {
         els.stage.innerHTML = `<div class="stage-placeholder ${work.colorClass}"><p>Video coming soon</p></div>`;
       }
     } else {
-      const src = work.images && work.images[current];
-      if (src) {
-        els.stage.innerHTML = `<img src="${src}" alt="${work.title}">`;
-      } else {
-        els.stage.innerHTML = `<div class="stage-placeholder ${work.colorClass}"><p>Photo coming soon</p></div>`;
-      }
+      els.stage.innerHTML = `<div class="stage-placeholder ${work.colorClass}"><p>Photo coming soon</p></div>`;
     }
+  }
+
+  // 提前把前后两张读进浏览器缓存,翻页时不会白屏等加载(国内网速下差别明显)。
+  function preloadNeighbours() {
+    if (slideCount < 2) return;
+    [1, -1].forEach((d) => {
+      const i = ((current + d) % slideCount + slideCount) % slideCount;
+      new Image().src = work.images[i];
+    });
   }
 
   render();
