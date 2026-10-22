@@ -81,7 +81,15 @@ const WORKS = [
       "assets/yi-08.jpg", "assets/yi-09.jpg", "assets/yi-10.jpg"
     ],
     credits: [["Directed by", "Raine"], ["Cinematography by", "Jimmy Liu"], ["Colour by", "Jimmy Liu"], ["Camera", "Sony A7M4"], ["Runtime", "02:05"], ["Location", "London, UK"]] },
+  // 剧照按片中时间码排序(源文件名就是时间码),第一张正好是片头「面前 / ENCOUNTER」
   { id: 10, type: "video", title: "Encounter", category: "Short Film", year: 2022, video: "", poster: "assets/poster-encounter.jpg", coverVideo: "assets/cover-encounter.mp4", colorClass: "ph-2",
+    images: [
+      "assets/encounter-01.jpg", "assets/encounter-02.jpg", "assets/encounter-03.jpg",
+      "assets/encounter-04.jpg", "assets/encounter-05.jpg", "assets/encounter-06.jpg",
+      "assets/encounter-07.jpg", "assets/encounter-08.jpg", "assets/encounter-09.jpg",
+      "assets/encounter-10.jpg", "assets/encounter-11.jpg", "assets/encounter-12.jpg",
+      "assets/encounter-13.jpg", "assets/encounter-14.jpg"
+    ],
     credits: [["Directed by", "Jimmy Liu"], ["Story by", "Jimmy Liu"], ["Camera", "Canon 5D2"], ["Runtime", "10:30"], ["Location", "Xinliao, CN"]] },
   { id: 12, type: "video", title: "Turner: The Interview", category: "Portrait Film", year: 2025, video: "", poster: "assets/poster-turner-interview.jpg", colorClass: "ph-6",
     credits: [["Shot by", "Jimmy Liu"], ["Colour by", "Jimmy Liu"], ["Camera", "Leica SL3, Fujifilm XT4"], ["Runtime", "03:04"]] },
