@@ -91,7 +91,17 @@ const WORKS = [
       "assets/encounter-13.jpg", "assets/encounter-14.jpg"
     ],
     credits: [["Directed by", "Jimmy Liu"], ["Story by", "Jimmy Liu"], ["Camera", "Canon 5D2"], ["Runtime", "10:30"], ["Location", "Xinliao, CN"]] },
+  // 素材来自两批不同来源(1276x720 和 3840x2160,比例 1.7722 / 1.7778),
+  // 统一按较小的那组对齐到 1276x720,避免翻页时画面大小跳动。第一张是片头。
   { id: 12, type: "video", title: "Turner: The Interview", category: "Portrait Film", year: 2025, video: "", poster: "assets/poster-turner-interview.jpg", colorClass: "ph-6",
+    images: [
+      "assets/turner-01.jpg", "assets/turner-02.jpg", "assets/turner-03.jpg",
+      "assets/turner-04.jpg", "assets/turner-05.jpg", "assets/turner-06.jpg",
+      "assets/turner-07.jpg", "assets/turner-08.jpg", "assets/turner-09.jpg",
+      "assets/turner-10.jpg", "assets/turner-11.jpg", "assets/turner-12.jpg",
+      "assets/turner-13.jpg", "assets/turner-14.jpg", "assets/turner-15.jpg",
+      "assets/turner-16.jpg"
+    ],
     credits: [["Shot by", "Jimmy Liu"], ["Colour by", "Jimmy Liu"], ["Camera", "Leica SL3, Fujifilm XT4"], ["Runtime", "03:04"]] },
   { id: 11, type: "video", title: "Maxsho: The Interview", category: "Interview", year: 2025, video: "", poster: "assets/poster-maxsho-interview.jpg", colorClass: "ph-4",
     credits: [["Directed & Shot by", "Jimmy Liu"], ["Camera", "Leica SL3"], ["Runtime", "02:24"]] },
