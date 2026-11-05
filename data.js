@@ -125,9 +125,11 @@ const WORKS = [
       "assets/saatchi-13.jpg"
     ],
     credits: [["Shot by", "Jimmy Liu"], ["Colour by", "Jimmy Liu"], ["Camera", "Sony A7M4"], ["Runtime", "04:02"]] },
-  { id: 2, type: "photo", title: "Film", category: "Film Photography", year: 2026, images: [], count: 1, colorClass: "ph-2" },
-  { id: 4, type: "photo", title: "Digital", category: "Digital Photography", year: 2026, images: [], count: 1, colorClass: "ph-6" },
-  { id: 6, type: "photo", title: "Mobile", category: "Mobile Photography", year: 2026, images: [], count: 1, colorClass: "ph-8" }
+  // hidden: true 表示暂时不对外显示 —— 首页网格里不出现,直接访问 work.html?id=N
+  // 也会被退回首页。内容整理好之后,把这一行的 true 改成 false(或整段删掉)就会重新出现。
+  { id: 2, type: "photo", title: "Film", category: "Film Photography", year: 2026, images: [], count: 1, colorClass: "ph-2", hidden: true },
+  { id: 4, type: "photo", title: "Digital", category: "Digital Photography", year: 2026, images: [], count: 1, colorClass: "ph-6", hidden: true },
+  { id: 6, type: "photo", title: "Mobile", category: "Mobile Photography", year: 2026, images: [], count: 1, colorClass: "ph-8", hidden: true }
 ];
 
 // awards: Information 页的获奖列表,格式 [Client, 评选/奖项方, 奖项名称, 年份],不需要就留空数组(不会显示这个板块)

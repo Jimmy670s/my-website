@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const id = Number(new URLSearchParams(window.location.search).get("id"));
   const work = WORKS.find((w) => w.id === id);
 
-  if (!work) {
+  // 找不到,或者在 data.js 里标了 hidden,都退回首页
+  if (!work || work.hidden) {
     window.location.href = "index.html";
     return;
   }

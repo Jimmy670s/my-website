@@ -73,7 +73,8 @@ function renderWorkGrid() {
   const grid = document.querySelector("[data-work-grid]");
   if (!grid) return;
 
-  grid.innerHTML = WORKS.map((work, index) => {
+  // hidden: true 的作品不进网格(data.js 里标记)
+  grid.innerHTML = WORKS.filter((work) => !work.hidden).map((work) => {
     const isVideo = work.type === "video";
     const poster = isVideo ? work.poster : (work.images && work.images[0]);
     const count = !isVideo ? ((work.images && work.images.length) || work.count || 1) : 0;
@@ -90,7 +91,7 @@ function renderWorkGrid() {
     const badge = !isVideo && count > 1 ? `<span class="media-badge">1/${count}</span>` : "";
 
     return `
-      <article class="work-card" data-work-index="${index}" tabindex="0" role="button" aria-label="${work.title}">
+      <article class="work-card" data-work-id="${work.id}" tabindex="0" role="button" aria-label="${work.title}">
         <div class="work-thumb-frame">
           <div class="work-thumb">
             ${thumbInner}
@@ -108,8 +109,7 @@ function renderWorkGrid() {
 
   grid.querySelectorAll(".work-card").forEach((card) => {
     card.addEventListener("click", () => {
-      const workIndex = Number(card.dataset.workIndex);
-      window.location.href = `work.html?id=${WORKS[workIndex].id}`;
+      window.location.href = `work.html?id=${card.dataset.workId}`;
     });
     card.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
