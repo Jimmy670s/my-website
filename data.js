@@ -99,8 +99,9 @@ const WORKS = [
       "assets/turner-04.jpg", "assets/turner-05.jpg", "assets/turner-06.jpg",
       "assets/turner-07.jpg", "assets/turner-08.jpg", "assets/turner-09.jpg",
       "assets/turner-10.jpg", "assets/turner-11.jpg", "assets/turner-12.jpg",
-      "assets/turner-13.jpg", "assets/turner-14.jpg", "assets/turner-15.jpg",
-      "assets/turner-16.jpg"
+      // 原 turner-13 和 12 是同一个镜头,且右下角带 London Art Collective
+      // 水印,已删除,所以文件编号在这里跳过 13
+      "assets/turner-14.jpg", "assets/turner-15.jpg", "assets/turner-16.jpg"
     ],
     credits: [["Shot by", "Jimmy Liu"], ["Colour by", "Jimmy Liu"], ["Camera", "Leica SL3, Fujifilm XT4"], ["Runtime", "03:04"]] },
   { id: 11, type: "video", title: "Maxsho: The Interview", category: "Interview", year: 2025, video: "", poster: "assets/poster-maxsho-interview.jpg", colorClass: "ph-4",
