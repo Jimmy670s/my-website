@@ -114,7 +114,16 @@ const WORKS = [
       "assets/maxsho-07.jpg", "assets/maxsho-09.jpg", "assets/maxsho-10.jpg"
     ],
     credits: [["Directed & Shot by", "Jimmy Liu"], ["Lighting by", "Jimmy Liu"], ["Colour by", "Jimmy Liu"], ["Camera", "Leica SL3"], ["Runtime", "02:24"]] },
+  // 源素材 13 张全部 1276x720(和 Turner 的 SaveClip 组同规格),无需裁切。
+  // 第一张就是片头 ArtEvol 2025。
   { id: 13, type: "video", title: "Live from Saatchi", category: "Exhibition Film", year: 2026, video: "", poster: "assets/poster-live-from-saatchi.jpg", colorClass: "ph-8",
+    images: [
+      "assets/saatchi-01.jpg", "assets/saatchi-02.jpg", "assets/saatchi-03.jpg",
+      "assets/saatchi-04.jpg", "assets/saatchi-05.jpg", "assets/saatchi-06.jpg",
+      "assets/saatchi-07.jpg", "assets/saatchi-08.jpg", "assets/saatchi-09.jpg",
+      "assets/saatchi-10.jpg", "assets/saatchi-11.jpg", "assets/saatchi-12.jpg",
+      "assets/saatchi-13.jpg"
+    ],
     credits: [["Shot by", "Jimmy Liu"], ["Colour by", "Jimmy Liu"], ["Camera", "Sony A7M4"], ["Runtime", "04:02"]] },
   { id: 2, type: "photo", title: "Film", category: "Film Photography", year: 2026, images: [], count: 1, colorClass: "ph-2" },
   { id: 4, type: "photo", title: "Digital", category: "Digital Photography", year: 2026, images: [], count: 1, colorClass: "ph-6" },
