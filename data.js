@@ -104,8 +104,16 @@ const WORKS = [
       "assets/turner-14.jpg", "assets/turner-15.jpg", "assets/turner-16.jpg"
     ],
     credits: [["Shot by", "Jimmy Liu"], ["Colour by", "Jimmy Liu"], ["Camera", "Leica SL3, Fujifilm XT4"], ["Runtime", "03:04"]] },
+  // 全部是 9:16 竖屏。源素材 2160x3840 和 720x1280 两种,比例一致,
+  // 按较小的统一到 720x1280。第一张是片头(原 c8)。
   { id: 11, type: "video", title: "Maxsho: The Interview", category: "Interview", year: 2025, video: "", poster: "assets/poster-maxsho-interview.jpg", colorClass: "ph-4",
-    credits: [["Directed & Shot by", "Jimmy Liu"], ["Camera", "Leica SL3"], ["Runtime", "02:24"]] },
+    images: [
+      "assets/maxsho-08.jpg", // 片头 MAXSHO / LET'S HEAR YOU
+      "assets/maxsho-01.jpg", "assets/maxsho-02.jpg", "assets/maxsho-03.jpg",
+      "assets/maxsho-04.jpg", "assets/maxsho-05.jpg", "assets/maxsho-06.jpg",
+      "assets/maxsho-07.jpg", "assets/maxsho-09.jpg", "assets/maxsho-10.jpg"
+    ],
+    credits: [["Directed & Shot by", "Jimmy Liu"], ["Lighting by", "Jimmy Liu"], ["Colour by", "Jimmy Liu"], ["Camera", "Leica SL3"], ["Runtime", "02:24"]] },
   { id: 13, type: "video", title: "Live from Saatchi", category: "Exhibition Film", year: 2026, video: "", poster: "assets/poster-live-from-saatchi.jpg", colorClass: "ph-8",
     credits: [["Shot by", "Jimmy Liu"], ["Colour by", "Jimmy Liu"], ["Camera", "Sony A7M4"], ["Runtime", "04:02"]] },
   { id: 2, type: "photo", title: "Film", category: "Film Photography", year: 2026, images: [], count: 1, colorClass: "ph-2" },
